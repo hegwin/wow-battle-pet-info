@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Blz:</b>
+  <%= @zone.blz_id %>
+</p>
+
+<p>
+  <b>Title cn:</b>
+  <%= @zone.title_cn %>
+</p>
+
+<p>
+  <b>Title en:</b>
+  <%= @zone.title_en %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @zone.parent_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @zone.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_zone_path(@zone) %> |
+<%= link_to 'Back', zones_path %>

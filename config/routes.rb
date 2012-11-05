@@ -1,4 +1,6 @@
 WowPetBattleInfo::Application.routes.draw do
+  resources :zones
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
