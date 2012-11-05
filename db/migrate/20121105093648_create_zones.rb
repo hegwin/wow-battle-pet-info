@@ -9,5 +9,11 @@ class CreateZones < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :zones, :blz_id
+    add_index :zones, :title_cn
+    add_index :zones, :title_en
+    add_index :zones, :parent_id
+
   end
 end
