@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  blz_id: 1
-  title_cn: MyString
-  title_en: MyString
+grey_valley:
+  blz_id: 331
+  title_cn: 灰谷
+  title_en: Grey Valley
   parent_id: 1
   description: MyText
 
-two:
-  blz_id: 1
-  title_cn: MyString
-  title_en: MyString
+the_barren:
+  blz_id: 17
+  title_cn: 贫瘠之地
+  title_en:  The Barren
   parent_id: 1
   description: MyText

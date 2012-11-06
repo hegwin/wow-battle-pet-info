@@ -3,3 +3,9 @@ development:
   encoding: utf-8
   host: localhost
   database: pet_battle_prod
+
+test:
+  adapter: postgresql
+  encoding: utf-8
+  host: localhost
+  database: pet_battle_test
