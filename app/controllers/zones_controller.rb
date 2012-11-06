@@ -2,7 +2,7 @@ class ZonesController < ApplicationController
   # GET /zones
   # GET /zones.json
   def index
-    @zones = Zone.all
+    @zones = Zone.roots
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +14,7 @@ class ZonesController < ApplicationController
   # GET /zones/1.json
   def show
     @zone = Zone.find(params[:id])
+    @children_zones = @zone.children
 
     respond_to do |format|
       format.html # show.html.erb
