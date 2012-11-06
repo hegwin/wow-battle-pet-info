@@ -6,4 +6,6 @@ class Zone < ActiveRecord::Base
   validates :blz_id, :title_cn, uniqueness: true
 
   acts_as_tree
+
+  has_and_belongs_to_many :pets
 end

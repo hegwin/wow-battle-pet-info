@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121106093157) do
+ActiveRecord::Schema.define(:version => 20121106102457) do
 
   create_table "pets", :force => true do |t|
     t.integer  "blz_id"
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(:version => 20121106093157) do
   add_index "pets", ["title_en"], :name => "index_pets_on_title_en"
   add_index "pets", ["url_param"], :name => "index_pets_on_url_param"
   add_index "pets", ["weather"], :name => "index_pets_on_weather"
+
+  create_table "pets_zones", :force => true do |t|
+    t.integer "pet_id",  :null => false
+    t.integer "zone_id", :null => false
+  end
+
+  add_index "pets_zones", ["pet_id", "zone_id"], :name => "index_pets_zones_on_pet_id_and_zone_id"
+  add_index "pets_zones", ["pet_id"], :name => "index_pets_zones_on_pet_id"
+  add_index "pets_zones", ["zone_id"], :name => "index_pets_zones_on_zone_id"
 
   create_table "zones", :force => true do |t|
     t.integer  "blz_id"

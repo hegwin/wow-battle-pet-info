@@ -3,4 +3,6 @@ class Pet < ActiveRecord::Base
 
   validate :blz_id, :title_cn, :source, presence: true
   validate :blz_id, uniqueness: true
+
+  has_and_belongs_to_many :zones
 end
