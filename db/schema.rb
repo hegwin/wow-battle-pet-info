@@ -11,7 +11,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121105093648) do
+ActiveRecord::Schema.define(:version => 20121106093157) do
+
+  create_table "pets", :force => true do |t|
+    t.integer  "blz_id"
+    t.string   "title_cn"
+    t.string   "title_en"
+    t.text     "description"
+    t.string   "status"
+    t.string   "icon_url"
+    t.string   "source"
+    t.string   "event"
+    t.string   "weather"
+    t.string   "season"
+    t.string   "nga_url"
+    t.integer  "category_id"
+    t.string   "url_param"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "pets", ["blz_id"], :name => "index_pets_on_blz_id"
+  add_index "pets", ["category_id"], :name => "index_pets_on_category_id"
+  add_index "pets", ["event"], :name => "index_pets_on_event"
+  add_index "pets", ["season"], :name => "index_pets_on_season"
+  add_index "pets", ["source"], :name => "index_pets_on_source"
+  add_index "pets", ["title_cn"], :name => "index_pets_on_title_cn"
+  add_index "pets", ["title_en"], :name => "index_pets_on_title_en"
+  add_index "pets", ["url_param"], :name => "index_pets_on_url_param"
+  add_index "pets", ["weather"], :name => "index_pets_on_weather"
 
   create_table "zones", :force => true do |t|
     t.integer  "blz_id"

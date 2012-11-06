@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Blz:</b>
+  <%= @pet.blz_id %>
+</p>
+
+<p>
+  <b>Title cn:</b>
+  <%= @pet.title_cn %>
+</p>
+
+<p>
+  <b>Title en:</b>
+  <%= @pet.title_en %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @pet.description %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @pet.status %>
+</p>
+
+<p>
+  <b>Icon url:</b>
+  <%= @pet.icon_url %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @pet.source %>
+</p>
+
+<p>
+  <b>Event:</b>
+  <%= @pet.event %>
+</p>
+
+<p>
+  <b>Weather:</b>
+  <%= @pet.weather %>
+</p>
+
+<p>
+  <b>Season:</b>
+  <%= @pet.season %>
+</p>
+
+<p>
+  <b>Nga url:</b>
+  <%= @pet.nga_url %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @pet.category_id %>
+</p>
+
+<p>
+  <b>Url param:</b>
+  <%= @pet.url_param %>
+</p>
+
+
+<%= link_to 'Edit', edit_pet_path(@pet) %> |
+<%= link_to 'Back', pets_path %>
