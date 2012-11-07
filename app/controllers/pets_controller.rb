@@ -2,7 +2,7 @@ class PetsController < ApplicationController
   # GET /pets
   # GET /pets.json
   def index
-    @pets = Pet.all
+    @pets = Pet.page(params[:page]).per(20)
 
     respond_to do |format|
       format.html # index.html.erb

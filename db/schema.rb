@@ -26,19 +26,21 @@ ActiveRecord::Schema.define(:version => 20121106102457) do
     t.string   "season"
     t.string   "nga_url"
     t.integer  "category_id"
-    t.string   "url_param"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "slug"
+    t.boolean  "reviewed",    :default => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   add_index "pets", ["blz_id"], :name => "index_pets_on_blz_id"
   add_index "pets", ["category_id"], :name => "index_pets_on_category_id"
   add_index "pets", ["event"], :name => "index_pets_on_event"
+  add_index "pets", ["reviewed"], :name => "index_pets_on_reviewed"
   add_index "pets", ["season"], :name => "index_pets_on_season"
+  add_index "pets", ["slug"], :name => "index_pets_on_slug", :unique => true
   add_index "pets", ["source"], :name => "index_pets_on_source"
   add_index "pets", ["title_cn"], :name => "index_pets_on_title_cn"
   add_index "pets", ["title_en"], :name => "index_pets_on_title_en"
-  add_index "pets", ["url_param"], :name => "index_pets_on_url_param"
   add_index "pets", ["weather"], :name => "index_pets_on_weather"
 
   create_table "pets_zones", :force => true do |t|
@@ -56,12 +58,14 @@ ActiveRecord::Schema.define(:version => 20121106102457) do
     t.string   "title_en"
     t.integer  "parent_id"
     t.text     "description"
+    t.string   "slug"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   add_index "zones", ["blz_id"], :name => "index_zones_on_blz_id"
   add_index "zones", ["parent_id"], :name => "index_zones_on_parent_id"
+  add_index "zones", ["slug"], :name => "index_zones_on_slug", :unique => true
   add_index "zones", ["title_cn"], :name => "index_zones_on_title_cn"
   add_index "zones", ["title_en"], :name => "index_zones_on_title_en"
 

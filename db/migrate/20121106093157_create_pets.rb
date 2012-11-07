@@ -13,7 +13,8 @@ class CreatePets < ActiveRecord::Migration
       t.string :season
       t.string :nga_url
       t.integer :category_id
-      t.string :url_param
+      t.string :slug
+      t.boolean :reviewed, default: false
 
       t.timestamps
     end
@@ -26,6 +27,7 @@ class CreatePets < ActiveRecord::Migration
     add_index :pets, :weather
     add_index :pets, :season
     add_index :pets, :category_id
-    add_index :pets, :url_param
+    add_index :pets, :slug, unique: true
+    add_index :pets, :reviewed
   end
 end
