@@ -7,7 +7,7 @@ class CreatePetsZones < ActiveRecord::Migration
 
     add_index :pets_zones, :pet_id
     add_index :pets_zones, :zone_id
-    add_index :pets_zones, [:pet_id, :zone_id]
+    #add_index :pets_zones, [:pet_id, :zone_id]
   end
 
   def down

@@ -1,0 +1,53 @@
+<%= form_for(@category) do |f| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :blz_id %><br />
+    <%= f.number_field :blz_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title_cn %><br />
+    <%= f.text_field :title_cn %>
+  </div>
+  <div class="field">
+    <%= f.label :title_en %><br />
+    <%= f.text_field :title_en %>
+  </div>
+  <div class="field">
+    <%= f.label :icon_url %><br />
+    <%= f.text_field :icon_url %>
+  </div>
+  <div class="field">
+    <%= f.label :features %><br />
+    <%= f.text_area :features %>
+  </div>
+  <div class="field">
+    <%= f.label :decay_with %><br />
+    <%= f.number_field :decay_with %>
+  </div>
+  <div class="field">
+    <%= f.label :restrain_on %><br />
+    <%= f.number_field :restrain_on %>
+  </div>
+  <div class="field">
+    <%= f.label :slug %><br />
+    <%= f.text_field :slug %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br />
+    <%= f.text_area :comments %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

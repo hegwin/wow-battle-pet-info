@@ -11,7 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121106102457) do
+ActiveRecord::Schema.define(:version => 20121107093159) do
+
+  create_table "categories", :force => true do |t|
+    t.integer  "blz_id"
+    t.string   "title_cn"
+    t.string   "title_en"
+    t.string   "icon_url"
+    t.text     "features"
+    t.integer  "decay_with"
+    t.integer  "restrain_on"
+    t.string   "slug"
+    t.text     "comments"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "categories", ["blz_id"], :name => "index_categories_on_blz_id"
+  add_index "categories", ["decay_with"], :name => "index_categories_on_decay_with"
+  add_index "categories", ["icon_url"], :name => "index_categories_on_icon_url"
+  add_index "categories", ["restrain_on"], :name => "index_categories_on_restrain_on"
+  add_index "categories", ["slug"], :name => "index_categories_on_slug", :unique => true
+  add_index "categories", ["title_cn"], :name => "index_categories_on_title_cn"
+  add_index "categories", ["title_en"], :name => "index_categories_on_title_en"
 
   create_table "pets", :force => true do |t|
     t.integer  "blz_id"
@@ -48,7 +70,6 @@ ActiveRecord::Schema.define(:version => 20121106102457) do
     t.integer "zone_id", :null => false
   end
 
-  add_index "pets_zones", ["pet_id", "zone_id"], :name => "index_pets_zones_on_pet_id_and_zone_id"
   add_index "pets_zones", ["pet_id"], :name => "index_pets_zones_on_pet_id"
   add_index "pets_zones", ["zone_id"], :name => "index_pets_zones_on_zone_id"
 

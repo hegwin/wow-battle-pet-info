@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  blz_id: 1
+  title_cn: MyString
+  title_en: MyString
+  icon_url: MyString
+  features: MyText
+  decay_with: 1
+  restrain_on: 1
+  slug: MyString
+  comments: MyText
+
+two:
+  blz_id: 1
+  title_cn: MyString
+  title_en: MyString
+  icon_url: MyString
+  features: MyText
+  decay_with: 1
+  restrain_on: 1
+  slug: MyString
+  comments: MyText

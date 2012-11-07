@@ -1,0 +1,39 @@
+<h1>Listing categories</h1>
+
+<table>
+  <tr>
+    <th>Blz</th>
+    <th>Title cn</th>
+    <th>Title en</th>
+    <th>Icon url</th>
+    <th>Features</th>
+    <th>Decay with</th>
+    <th>Restrain on</th>
+    <th>Slug</th>
+    <th>Comments</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+    <td><%= category.blz_id %></td>
+    <td><%= category.title_cn %></td>
+    <td><%= category.title_en %></td>
+    <td><%= category.icon_url %></td>
+    <td><%= category.features %></td>
+    <td><%= category.decay_with %></td>
+    <td><%= category.restrain_on %></td>
+    <td><%= category.slug %></td>
+    <td><%= category.comments %></td>
+    <td><%= link_to 'Show', category %></td>
+    <td><%= link_to 'Edit', edit_category_path(category) %></td>
+    <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Category', new_category_path %>

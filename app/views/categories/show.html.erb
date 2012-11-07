@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Blz:</b>
+  <%= @category.blz_id %>
+</p>
+
+<p>
+  <b>Title cn:</b>
+  <%= @category.title_cn %>
+</p>
+
+<p>
+  <b>Title en:</b>
+  <%= @category.title_en %>
+</p>
+
+<p>
+  <b>Icon url:</b>
+  <%= @category.icon_url %>
+</p>
+
+<p>
+  <b>Features:</b>
+  <%= @category.features %>
+</p>
+
+<p>
+  <b>Decay with:</b>
+  <%= @category.decay_with %>
+</p>
+
+<p>
+  <b>Restrain on:</b>
+  <%= @category.restrain_on %>
+</p>
+
+<p>
+  <b>Slug:</b>
+  <%= @category.slug %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @category.comments %>
+</p>
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
