@@ -3,4 +3,6 @@ class Category < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :title_en, use: :slugged
+
+  has_many :pets
 end
