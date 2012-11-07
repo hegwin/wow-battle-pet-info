@@ -28,3 +28,19 @@ Pet.transaction do
   end
 
 end
+
+Category.transaction do
+  Category.delete_all
+  CSV.foreach("#{Rails.root}/db/data_src/categories.csv") do |blz_id, title_cn, title_en, _, _, icon_url, features|
+    if blz_id =~ /\d/
+      Category.create(blz_id: blz_id, title_cn: title_cn, title_en: title_en, icon_url: icon_url, features: features)
+    end
+  end
+  
+  CSV.foreach("#{Rails.root}/db/data_src/categories.csv") do |line|
+    if line[0] =~ /\d/
+      categories = Category.find_all_by_blz_id([line[0], line[3], line[4]])
+      categories.first.update_attributes({restrain_on: categories[1].id, decay_with: categories[2].id})
+    end
+  end  
+end
