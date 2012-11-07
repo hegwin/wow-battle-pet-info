@@ -28,6 +28,9 @@ gem 'acts_as_tree'
 # To paginage
 gem 'kaminari'
 
+# To generate friendly url
+gem 'friendly_id',   '~> 4.0.1'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
