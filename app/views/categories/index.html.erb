@@ -1,16 +1,12 @@
-<h1>Listing categories</h1>
+<h1>Pet Categories</h1>
 
-<table>
+<table class="table table-striped">
   <tr>
-    <th>Blz</th>
-    <th>Title cn</th>
-    <th>Title en</th>
-    <th>Icon url</th>
+    <th>Icon</th>
+    <th>Title</th>
     <th>Features</th>
     <th>Decay with</th>
     <th>Restrain on</th>
-    <th>Slug</th>
-    <th>Comments</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,15 +14,11 @@
 
 <% @categories.each do |category| %>
   <tr>
-    <td><%= category.blz_id %></td>
+    <td><%= image_tag category.icon_url, size: "24x24" %></td>
     <td><%= category.title_cn %></td>
-    <td><%= category.title_en %></td>
-    <td><%= category.icon_url %></td>
     <td><%= category.features %></td>
     <td><%= category.decay_with %></td>
     <td><%= category.restrain_on %></td>
-    <td><%= category.slug %></td>
-    <td><%= category.comments %></td>
     <td><%= link_to 'Show', category %></td>
     <td><%= link_to 'Edit', edit_category_path(category) %></td>
     <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
