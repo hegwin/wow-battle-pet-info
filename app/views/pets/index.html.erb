@@ -15,7 +15,7 @@
 
 <% @pets.each do |pet| %>
   <tr>
-    <td><%= image_tag pet.icon_url,:height =>'16px' %></td>
+    <td><%= image_tag pet.icon_url,:style => "height: 24px" %></td>
     <td><%= pet.title_cn %></td>
     <td><%= pet.source %></td>
     <td>Normal</td>

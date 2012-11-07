@@ -19,3 +19,12 @@ Zone.transaction do
     zone.save
   end
 end
+
+Pet.transaction do
+  Pet.delete_all
+
+  CSV.foreach("#{Rails.root}/db/data_src/pets.csv") do |blz_id, title_cn, _, source, _, icon_url |
+    Pet.create(blz_id: blz_id, title_cn: title_cn, source: source, icon_url: icon_url)
+  end
+
+end
