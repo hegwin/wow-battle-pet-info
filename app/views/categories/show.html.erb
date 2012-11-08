@@ -1,29 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Blz:</b>
-  <%= @category.blz_id %>
-</p>
+<h1><%= image_tag @category.icon_url, size: "36x36" %> <%= @category.title_cn %></h1>
 
-<p>
-  <b>Title cn:</b>
-  <%= @category.title_cn %>
-</p>
-
-<p>
-  <b>Title en:</b>
-  <%= @category.title_en %>
-</p>
-
-<p>
-  <b>Icon url:</b>
-  <%= @category.icon_url %>
-</p>
-
-<p>
-  <b>Features:</b>
-  <%= @category.features %>
-</p>
+<p><strong><%= @category.features %></strong></p>
 
 <p>
   <b>Decay with:</b>
@@ -35,16 +14,7 @@
   <%= @category.restrain_on %>
 </p>
 
-<p>
-  <b>Slug:</b>
-  <%= @category.slug %>
-</p>
-
-<p>
-  <b>Comments:</b>
-  <%= @category.comments %>
-</p>
-
+<%= render partial: 'pets/table' %>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>

@@ -1,0 +1,28 @@
+<%= paginate @pets %>
+<table class="table table-striped">
+  <tr>
+    <th>Icon</th>
+    <th>Title cn</th>
+    <th>Source</th>
+    <th>Special</th>
+    <th>Nga url</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pets.each do |pet| %>
+  <tr>
+    <td><%= image_tag pet.icon_url,:style => "height: 24px" %></td>
+    <td><%= pet.title_cn %></td>
+    <td><%= pet.source %></td>
+    <td>Normal</td>
+    <td><%= pet.nga_url %></td>
+    <td><%= pet.category_id %></td>
+    <td><%= link_to 'Show', pet %></td>
+    <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
+    <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
