@@ -1,34 +1,28 @@
 <p id="notice"><%= notice %></p>
 
+<div class="page-header">
+  <h1><%= image_tag @pet.icon_url, style: "vertical-align: middle" %> <%= @pet.title_cn%></h1>
+</div>
+  <blockquote>如此可爱，如此神奇。<%= @pet.description %></blockquote>
+<div class="container">
+  <div class="span4">
+    <div class="well">
+      <h2><small>宠物名片</small></h2>
+    </div>
+  </div>
+</div>
+
+
 <p>
   <b>Blz:</b>
   <%= @pet.blz_id %>
-</p>
-
-<p>
-  <b>Title cn:</b>
-  <%= @pet.title_cn %>
-</p>
-
-<p>
-  <b>Title en:</b>
-  <%= @pet.title_en %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @pet.description %>
-</p>
+  </p>
 
 <p>
   <b>Status:</b>
   <%= @pet.status %>
 </p>
 
-<p>
-  <b>Icon url:</b>
-  <%= @pet.icon_url %>
-</p>
 
 <p>
   <b>Source:</b>
