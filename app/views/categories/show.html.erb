@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
+<div class="page-header">
+  <h1><%= image_tag @category.icon_url, size: "36x36" %> <%= @category.title_cn %></h1>
+</div>
 
-<h1><%= image_tag @category.icon_url, size: "36x36" %> <%= @category.title_cn %></h1>
-
-<p><strong><%= @category.features %></strong></p>
+<p><i class="icon-ok"></i> <strong><%= @category.features %></strong></p>
 
 <p>
   <b>Decay with:</b>
