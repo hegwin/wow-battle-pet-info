@@ -20,15 +20,6 @@ Zone.transaction do
   end
 end
 
-Pet.transaction do
-  Pet.delete_all
-
-  CSV.foreach("#{Rails.root}/db/data_src/pets.csv") do |blz_id, title_cn, _, source, _, icon_url |
-    Pet.create(blz_id: blz_id, title_cn: title_cn, source: source, icon_url: icon_url)
-  end
-
-end
-
 Category.transaction do
   Category.delete_all
   CSV.foreach("#{Rails.root}/db/data_src/categories.csv") do |blz_id, title_cn, title_en, _, _, icon_url, features|
@@ -43,4 +34,14 @@ Category.transaction do
       categories.first.update_attributes({restrain_on: categories[1].id, decay_with: categories[2].id})
     end
   end  
+end
+
+Pet.transaction do
+  Pet.delete_all
+
+  CSV.foreach("#{Rails.root}/db/data_src/pets.csv") do |blz_id, title_cn, category, source, _, icon_url |
+    category = Category.find_by_title_en(category)
+    pet = Pet.create(blz_id: blz_id, title_cn: title_cn, source: source, icon_url: icon_url, category: category)
+  end
+
 end
