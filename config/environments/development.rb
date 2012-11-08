@@ -34,4 +34,7 @@ WowPetBattleInfo::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Hide logs related to Sprockets @wangxiao
+  config.assets.logger = false
 end
