@@ -5,4 +5,12 @@ class Category < ActiveRecord::Base
   friendly_id :title_en, use: :slugged
 
   has_many :pets
+
+  def enemy
+    Category.find_by_restrain_on self.id
+  end
+
+  def rookie
+    Category.find_by_decay_with self.id
+  end
 end

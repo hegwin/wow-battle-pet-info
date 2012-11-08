@@ -30,8 +30,11 @@ Category.transaction do
   
   CSV.foreach("#{Rails.root}/db/data_src/categories.csv") do |line|
     if line[0] =~ /\d/
-      categories = Category.find_all_by_blz_id([line[0], line[3], line[4]])
-      categories.first.update_attributes({restrain_on: categories[1].id, decay_with: categories[2].id})
+      #category = Category.find_all_by_blz_id([line[0], line[3], line[4]])
+      category = Category.find_by_blz_id(line[0])
+      restrain_on = Category.find_by_blz_id(line[3], select: :id).id
+      decay_with = Category.find_by_blz_id(line[4], select: :id).id
+      category.update_attributes({restrain_on: restrain_on, decay_with: decay_with})
     end
   end  
 end

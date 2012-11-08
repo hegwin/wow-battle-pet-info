@@ -5,15 +5,8 @@
 
 <p><i class="icon-ok"></i> <strong><%= @category.features %></strong></p>
 
-<p>
-  <b>Decay with:</b>
-  <%= @category.decay_with %>
-</p>
-
-<p>
-  <b>Restrain on:</b>
-  <%= @category.restrain_on %>
-</p>
+<p><i class="icon-arrow-up"></i> Suffer <strong style="color: red">150%</strong> damage VS <%= image_tag @category.enemy.icon_url, size: "26x26", style: "vertical-align: middle" %></p>
+<p><i class="icon-arrow-down"></i> Suffer <strong style="color: green">&nbsp;66%</strong> damage VS <%= image_tag @category.rookie.icon_url, size: "26x26", style: "vertical-align: middle" %></p>
 
 <%= render partial: 'pets/table' %>
 
