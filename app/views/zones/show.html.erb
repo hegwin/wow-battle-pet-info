@@ -1,5 +1,9 @@
-<h1><%= @zone.title_cn %></h1>
-
+<div class="page-header">
+  <h1>
+    <%=image_tag "zones/#{@zone.blz_id}.jpg", size: "26x26", style: "vertical-align: middle" -%>
+    <%= @zone.title_cn %>
+  </h1>
+</div>
 <p id="notice"><%= notice %></p>
 
 <p>

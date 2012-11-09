@@ -8,4 +8,7 @@ class Zone < ActiveRecord::Base
   acts_as_tree
 
   has_and_belongs_to_many :pets
+
+  extend FriendlyId
+  friendly_id :title_en, use: :slugged
 end
