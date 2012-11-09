@@ -10,8 +10,8 @@ require 'csv'
 Zone.transaction do
   Zone.delete_all
     
-  CSV.foreach("#{Rails.root}/db/data_src/zones.csv") do |blz_id, title_cn, parent_id|
-    zone = Zone.new(blz_id: blz_id, title_cn: title_cn)
+  CSV.foreach("#{Rails.root}/db/data_src/zones.csv") do |blz_id, title_cn, parent_id, title_en|
+    zone = Zone.new(blz_id: blz_id, title_cn: title_cn, title_en: title_en)
     if parent_id =~ /\d/
       parent_zone = Zone.find_by_blz_id(parent_id)
       zone.parent_id = parent_zone.id
