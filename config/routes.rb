@@ -1,4 +1,6 @@
 WowPetBattleInfo::Application.routes.draw do
+  resources :skills
+
   resources :categories
 
   resources :pets

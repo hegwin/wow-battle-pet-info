@@ -1,0 +1,39 @@
+<h1>Listing skills</h1>
+
+<table>
+  <tr>
+    <th>Blz</th>
+    <th>Title cn</th>
+    <th>Title en</th>
+    <th>Description</th>
+    <th>Hit rate</th>
+    <th>Category</th>
+    <th>Cd</th>
+    <th>Status</th>
+    <th>Comments</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @skills.each do |skill| %>
+  <tr>
+    <td><%= skill.blz_id %></td>
+    <td><%= skill.title_cn %></td>
+    <td><%= skill.title_en %></td>
+    <td><%= skill.description %></td>
+    <td><%= skill.hit_rate %></td>
+    <td><%= skill.category_id %></td>
+    <td><%= skill.cd %></td>
+    <td><%= skill.status %></td>
+    <td><%= skill.comments %></td>
+    <td><%= link_to 'Show', skill %></td>
+    <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
+    <td><%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Skill', new_skill_path %>

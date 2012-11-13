@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  blz_id: 
+  title_cn: 
+  title_en: 
+  description: 
+  hit_rate: 
+  category_id: 
+  cd: 
+  status: 
+  comments: MyText
+
+two:
+  blz_id: 
+  title_cn: 
+  title_en: 
+  description: 
+  hit_rate: 
+  category_id: 
+  cd: 
+  status: 
+  comments: MyText

@@ -5,6 +5,7 @@ class Category < ActiveRecord::Base
   friendly_id :title_en, use: :slugged
 
   has_many :pets
+  has_many :skills
 
   def enemy
     Category.find_by_restrain_on self.id

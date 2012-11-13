@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121107093159) do
+ActiveRecord::Schema.define(:version => 20121113075121) do
 
   create_table "categories", :force => true do |t|
     t.integer  "blz_id"
@@ -72,6 +72,29 @@ ActiveRecord::Schema.define(:version => 20121107093159) do
 
   add_index "pets_zones", ["pet_id"], :name => "index_pets_zones_on_pet_id"
   add_index "pets_zones", ["zone_id"], :name => "index_pets_zones_on_zone_id"
+
+  create_table "skills", :force => true do |t|
+    t.integer  "blz_id",      :null => false
+    t.string   "title_cn",    :null => false
+    t.string   "title_en"
+    t.text     "description"
+    t.integer  "hit_rate"
+    t.integer  "category_id", :null => false
+    t.integer  "cd"
+    t.string   "status"
+    t.string   "slug"
+    t.text     "comments"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "skills", ["blz_id"], :name => "index_skills_on_blz_id"
+  add_index "skills", ["cd"], :name => "index_skills_on_cd"
+  add_index "skills", ["hit_rate"], :name => "index_skills_on_hit_rate"
+  add_index "skills", ["slug"], :name => "index_skills_on_slug", :unique => true
+  add_index "skills", ["status"], :name => "index_skills_on_status"
+  add_index "skills", ["title_cn"], :name => "index_skills_on_title_cn"
+  add_index "skills", ["title_en"], :name => "index_skills_on_title_en"
 
   create_table "zones", :force => true do |t|
     t.integer  "blz_id"
