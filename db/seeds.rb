@@ -46,5 +46,14 @@ Pet.transaction do
     category = Category.find_by_title_en(category)
     pet = Pet.create(blz_id: blz_id, title_cn: title_cn, source: source, icon_url: icon_url, category: category)
   end
+end
 
+Skill.transaction do
+  Skill.delete_all
+  CSV.foreach("#{Rails.root}/db/data_src/skills.csv") do |blz_id, title_cn, category, hit_rate, cd, description, _|
+    if blz_id =~ /\d/ 
+      category = Category.find_by_title_en(category)
+      Skill.create(blz_id: blz_id, title_cn: title_cn, category: category, hit_rate: hit_rate, cd: cd, description: description)
+    end
+  end
 end

@@ -1,16 +1,14 @@
-<h1>Listing skills</h1>
+<h1>Skills</h1>
 
-<table>
+<%= paginate @skills %>
+<table class="table table-striped">
   <tr>
-    <th>Blz</th>
+    <th>Icon</th>
     <th>Title cn</th>
-    <th>Title en</th>
     <th>Description</th>
     <th>Hit rate</th>
     <th>Category</th>
     <th>Cd</th>
-    <th>Status</th>
-    <th>Comments</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,22 +16,19 @@
 
 <% @skills.each do |skill| %>
   <tr>
-    <td><%= skill.blz_id %></td>
+    <td><%= image_tag "skills/#{skill.blz_id}.jpg" %></td>
     <td><%= skill.title_cn %></td>
-    <td><%= skill.title_en %></td>
-    <td><%= skill.description %></td>
-    <td><%= skill.hit_rate %></td>
-    <td><%= skill.category_id %></td>
+    <td><%= truncate skill.description, length: 20 %></td>
+    <td><%= number_to_percentage skill.hit_rate, precision: 0 %></td>
+    <td><%= image_tag skill.category.icon_url %></td>
     <td><%= skill.cd %></td>
-    <td><%= skill.status %></td>
-    <td><%= skill.comments %></td>
     <td><%= link_to 'Show', skill %></td>
     <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
     <td><%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
-
+<%= paginate @skills %>
 <br />
 
 <%= link_to 'New Skill', new_skill_path %>
