@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121113094802) do
+ActiveRecord::Schema.define(:version => 20121114071024) do
+
+  create_table "acquirings", :force => true do |t|
+    t.integer  "pet_id",        :null => false
+    t.integer  "skill_id",      :null => false
+    t.integer  "acquire_level", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "acquirings", ["acquire_level"], :name => "index_acquirings_on_acquire_level"
+  add_index "acquirings", ["pet_id"], :name => "index_acquirings_on_pet_id"
+  add_index "acquirings", ["skill_id"], :name => "index_acquirings_on_skill_id"
 
   create_table "categories", :force => true do |t|
     t.integer  "blz_id"
@@ -64,16 +76,6 @@ ActiveRecord::Schema.define(:version => 20121113094802) do
   add_index "pets", ["title_cn"], :name => "index_pets_on_title_cn"
   add_index "pets", ["title_en"], :name => "index_pets_on_title_en"
   add_index "pets", ["weather"], :name => "index_pets_on_weather"
-
-  create_table "pets_skills", :force => true do |t|
-    t.integer "pet_id",       :null => false
-    t.integer "skill_id",     :null => false
-    t.integer "aquire_level", :null => false
-  end
-
-  add_index "pets_skills", ["aquire_level"], :name => "index_pets_skills_on_aquire_level"
-  add_index "pets_skills", ["pet_id"], :name => "index_pets_skills_on_pet_id"
-  add_index "pets_skills", ["skill_id"], :name => "index_pets_skills_on_skill_id"
 
   create_table "pets_zones", :force => true do |t|
     t.integer "pet_id",  :null => false

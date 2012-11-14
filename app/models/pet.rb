@@ -5,6 +5,6 @@ class Pet < ActiveRecord::Base
   validate :blz_id, uniqueness: true
 
   has_and_belongs_to_many :zones
-  has_and_belongs_to_many :skills
+  has_many :acquirings
   belongs_to :category
 end
