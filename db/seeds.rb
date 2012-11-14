@@ -6,6 +6,7 @@ require 'csv'
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+ACQUIRING_LEVEL = [1, 2, 4, 10, 15, 20]
 
 Zone.transaction do
   Zone.delete_all
@@ -54,6 +55,28 @@ Skill.transaction do
     if blz_id =~ /\d/ 
       category = Category.find_by_title_en(category)
       Skill.create(blz_id: blz_id, title_cn: title_cn, category: category, hit_rate: hit_rate, cd: cd, description: description)
+    end
+  end
+end
+
+Acquiring.transaction do
+  Acquiring.delete_all
+
+  CSV.foreach(File.join(Rails.root, 'db/data_src/pets_skills.csv')) do |line|
+    if line[0] =~ /\d/
+      if pet = Pet.find_by_blz_id(line[0])
+        line[1..6].each_with_index do |blz_id, i|
+          if blz_id.nil?
+            next
+          elsif skill = Skill.find_by_blz_id(blz_id)
+            Acquiring.create(pet: pet, skill: skill, acquire_level: ACQUIRING_LEVEL[i])
+          else
+            puts "Warn: can't find skill whose blz_id = #{blz_id}"
+          end
+        end
+      else
+        puts "Warn: can't find pet whose blz_id = #{line[0]}"
+      end
     end
   end
 end
