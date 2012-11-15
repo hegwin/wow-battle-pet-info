@@ -6,7 +6,6 @@ require 'csv'
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-ACQUIRING_LEVEL = [1, 2, 4, 10, 15, 20]
 
 Zone.transaction do
   Zone.delete_all
@@ -69,7 +68,7 @@ Acquiring.transaction do
           if blz_id.nil?
             next
           elsif skill = Skill.find_by_blz_id(blz_id)
-            Acquiring.create(pet: pet, skill: skill, acquire_level: ACQUIRING_LEVEL[i])
+            Acquiring.create(pet: pet, skill: skill, acquire_level: Skill::ACQUIRING_LEVEL[i])
           else
             puts "Warn: can't find skill whose blz_id = #{blz_id}"
           end

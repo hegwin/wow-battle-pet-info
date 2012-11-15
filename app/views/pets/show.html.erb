@@ -12,7 +12,29 @@
   </div>
 </div>
 
-
+<h2>Abilities</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>AL</th>
+      <th>Icon</th>
+      <th>Name</th>
+      <th>Decription</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @skills.each_with_index do |skill, i| -%>
+      <tr>
+        <td><%= Skill::ACQUIRING_LEVEL[i]%></td>
+        <td><%= image_tag "skills/#{skill.blz_id}.jpg", size: "18x18"%></td>
+        <td><%= link_to skill.title_cn, skill %></td>
+        <td><%= word_wrap skill.description %></td>
+        <td><%= image_tag skill.category.icon_url, size: "18x18" %></td>
+      </tr>
+    <% end -%>
+  <tbody>
+</table>
 <p>
   <b>Blz:</b>
   <%= @pet.blz_id %>

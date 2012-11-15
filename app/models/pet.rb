@@ -7,4 +7,8 @@ class Pet < ActiveRecord::Base
   has_and_belongs_to_many :zones
   has_many :acquirings
   belongs_to :category
+
+  def skills
+    Skill.find_by_sql "select * from skills left join acquirings on skills.id = skill_id where pet_id = #{id} order by acquire_level"
+  end
 end
