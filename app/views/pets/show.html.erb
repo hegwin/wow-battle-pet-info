@@ -30,7 +30,7 @@
         <td><%= Skill::ACQUIRING_LEVEL[i]%></td>
         <td><%= image_tag "skills/#{skill.blz_id}.jpg", size: "18x18"%></td>
         <td><%= link_to skill.title_cn, skill %></td>
-        <td><%= word_wrap skill.description %></td>
+        <td><%= simple_format skill.description %></td>
         <td><%= image_tag skill.category.icon_url, size: "18x18" %></td>
         <td><%= show_hit_rate skill.hit_rate %></td>
       </tr>
