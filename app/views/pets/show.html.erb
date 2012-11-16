@@ -25,9 +25,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @skills.each_with_index do |skill, i| -%>
+    <% @acquirings.each do |acquiring| -%>
+      <% skill = acquiring.skill %>
       <tr>
-        <td><%= Skill::ACQUIRING_LEVEL[i]%></td>
+        <td><%= acquiring.acquire_level %></td>
         <td><%= image_tag "skills/#{skill.blz_id}.jpg", size: "18x18"%></td>
         <td><%= link_to skill.title_cn, skill %></td>
         <td><%= simple_format skill.description %></td>
