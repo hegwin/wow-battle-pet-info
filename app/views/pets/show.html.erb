@@ -8,6 +8,23 @@
   <div class="span4">
     <div class="well">
       <h2><small>宠物名片</small></h2>
+      <div class="row">
+        <span class="span1"><span class="label label-info">姓名</span></span>
+        <span class="span2"><%= @pet.title_cn %></span>
+      </div>
+
+      <div class="row">
+        <span class="span1"><span class="label label-info">来源</span></span>
+        <span class="span2"><%= @pet.source %></span>
+      </div>      
+      <div class="row">
+        <span class="span1"><span class="label label-info">获取地点</span></span>
+        <span class="span2"><%= show_zones @zones %></span>
+      </div>
+      <div class="row">
+        <span class="span1"><span class="label label-info">技能列表</span></span>
+        <span class="span2"></span>
+      </div>
     </div>
   </div>
 </div>

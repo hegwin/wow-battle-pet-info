@@ -15,6 +15,7 @@ class PetsController < ApplicationController
   def show
     @pet = Pet.find(params[:id])
     @acquirings = @pet.acquirings.order(:acquire_level).includes(:skill)
+    @zones = @pet.zones
 
     respond_to do |format|
       format.html # show.html.erb
