@@ -2,7 +2,7 @@ class SkillsController < ApplicationController
   # GET /skills
   # GET /skills.json
   def index
-    @skills = Skill.page(params[:page]).per(20)
+    @skills = Skill.page(params[:page]).per(20).includes(:category)
 
     respond_to do |format|
       format.html # index.html.erb
