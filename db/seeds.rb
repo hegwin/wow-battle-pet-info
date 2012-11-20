@@ -42,9 +42,23 @@ end
 Pet.transaction do
   Pet.delete_all
 
-  CSV.foreach("#{Rails.root}/db/data_src/pets.csv") do |blz_id, title_cn, category, source, _, icon_url |
+  CSV.foreach("#{Rails.root}/db/data_src/pets.csv") do |blz_id, title_cn, category, source, _, icon_url, desc, zones |
     category = Category.find_by_title_en(category)
-    pet = Pet.create(blz_id: blz_id, title_cn: title_cn, source: source, icon_url: icon_url, category: category)
+    pet = Pet.create(blz_id: blz_id, title_cn: title_cn, source: source, icon_url: icon_url, category: category, description: desc)
+    pet.zones << Zone.find_all_by_title_cn(zones.split(',')) if zones =~ /./
+    # for test    
+=begin     
+    if zones =~ /./
+      zones.split(',').each do |zone|
+        z = Zone.find_by_title_cn(zone)
+        if z
+          pet.zones << z
+        else
+          puts "unknown zone: #{zone}"
+        end
+      end
+    end
+=end
   end
 end
 
