@@ -1,5 +1,5 @@
 class Pet < ActiveRecord::Base
-  attr_accessible :blz_id, :category, :description, :event, :icon_url, :nga_url, :season, :source, :status, :title_cn, :title_en, :url_param, :weather
+  attr_accessible :blz_id, :category, :description, :event, :icon_url, :nga_url, :season, :source, :status, :title_cn, :title_en, :url_param, :weather, :reviewed
 
   validate :blz_id, :title_cn, :source, presence: true
   validate :blz_id, uniqueness: true
