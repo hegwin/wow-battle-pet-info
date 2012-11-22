@@ -11,8 +11,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-    <%= yield %>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span2">
+        <p>left navigaaaaaaaaaaaaaaaa a aa aa aa a a aa a a a a aa a a a a aa a a a aaaaaaaation</p>
+      </div>
+      <div class="span10">
+        <%= yield %>
+      </div>
+    </div>
   </div>
 
 </body>

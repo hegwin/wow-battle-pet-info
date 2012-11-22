@@ -7,8 +7,10 @@ class Pet < ActiveRecord::Base
   has_and_belongs_to_many :zones
   has_many :acquirings
   belongs_to :category
+  has_many :skills, through: :acquirings
+  has_many :categories_of_skills, through: :skills, source: :category
 
-  def skills
-    Skill.find_by_sql "select skills.id,title_cn,description,blz_id,category_id,hit_rate from skills left join acquirings on skills.id = skill_id where pet_id = #{id} order by acquire_level"
+  def main_skill_category
+    categories_of_skills.group('categories.id').order('count(*) desc').limit(1)
   end
 end
