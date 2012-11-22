@@ -6,6 +6,7 @@ grey_valley:
   title_en: Grey Valley
   parent_id: 1
   description: MyText
+  slug: grey-valley
 
 the_barren:
   blz_id: 17
@@ -13,3 +14,4 @@ the_barren:
   title_en:  The Barren
   parent_id: 1
   description: MyText
+  slug: the-barren

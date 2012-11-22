@@ -1,23 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  blz_id: 
-  title_cn: 
-  title_en: 
-  description: 
-  hit_rate: 
-  category_id: 
-  cd: 
+call_lighting:
+  blz_id: 204
+  title_cn: 召唤闪电
+  title_en: Call Lightning
+  description: "Deals 25 damage and causes a Lightning Storm for rounds./n During a Lightning Storm, all pets deal 2 bonus damage on each attack and Mechinical ablities deal 25% addional damage."
+  hit_rate: 88
+  category: :mechanical
+  cd: 3
   status: 
   comments: MyText
+  slug: call-lightning
 
-two:
-  blz_id: 
-  title_cn: 
-  title_en: 
-  description: 
+roar:
+  blz_id: 347
+  title_cn: 咆哮
+  title_en: Roar
+  description: "一声凶猛咆哮,造成10点伤害,并激怒使用者,使其造成的伤害提高25%,持续3轮"
   hit_rate: 
-  category_id: 
+  category: :beast
   cd: 
   status: 
   comments: MyText
+  slug: roar

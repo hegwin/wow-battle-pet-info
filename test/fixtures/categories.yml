@@ -1,23 +1,56 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  blz_id: 1
-  title_cn: MyString
-  title_en: MyString
+humanoid:
+  blz_id: 0
+  title_cn: 人形
+  title_en: Humanoid
   icon_url: MyString
-  features: MyText
+  features: 人型生物如果在本轮造成伤害，则可回复最大生命值的4%。
   decay_with: 1
   restrain_on: 1
-  slug: MyString
+  slug: humanoid
   comments: MyText
 
-two:
+dragonkin:
   blz_id: 1
-  title_cn: MyString
-  title_en: MyString
+  title_cn: 龙类
+  title_en: Dragonkin
   icon_url: MyString
-  features: MyText
+  features: 当目标的生命值降低至25%以下时，龙类将在下一轮造成额外50%的伤害
   decay_with: 1
   restrain_on: 1
-  slug: MyString
+  slug: dragonkin
   comments: MyText
+
+critter:
+  blz_id: 4
+  title_cn: 小动物
+  title_en: Critter
+  icon_url: critter.png
+  features: 小动物会更快地解除群体控制效果
+  decay_with:
+  restrain_on:
+  slug: critter
+  comments: 
+
+beast:
+  blz_id: 7
+  title_cn: 野兽
+  title_en: Beast
+  icon_url: beast.png
+  features: 当生命值低于一半时，野兽造成25%的额外伤害
+  decay_with:
+  restrain_on:
+  slug: beast
+  comments: 
+
+mechanical:
+  blz_id: 9
+  title_cn: 机械
+  title_en: Mechanical
+  icon_url: mechanical.png
+  features: 当生命值低于一半时，野兽造成25%的额外伤害
+  decay_with: 
+  restrain_on:
+  slug: mechanical
+  comments: 

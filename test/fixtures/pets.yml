@@ -1,25 +1,26 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  blz_id: 1
-  title_cn: MyString
-  title_en: MyString
-  description: MyText
-  status: MyString
-  icon_url: MyString
-  source: MyString
-  event: MyString
-  weather: MyString
-  season: MyString
-  nga_url: MyString
-  category_id: 
-  url_param: MyString
+squirrel:
+  blz_id: 39
+  title_cn: 机械松鼠
+  title_en: Mechinical Squirrel
+  description: 机械松鼠体内的逻辑运算中心告诉它，要多多采集坚果和螺栓，以备冬季取用。
+  status: 
+  icon_url: inv_pet_mechanicalsquirrel.jpg
+  source: 专业技能
+  event: 
+  weather:
+  season:
+  nga_url:
+  category: :critter
+  slug: mechinacal-squirrel
+  reviewed: false
 
-two:
-  blz_id: 1
-  title_cn: MyString
-  title_en: MyString
-  description: MyText
+hatchling:
+  blz_id: 817
+  title_cn: 野生翡翠雏龙
+  title_en: Wild Jade Hatchling
+  description: 如此可爱，如此神奇。
   status: MyString
   icon_url: MyString
   source: MyString
@@ -27,5 +28,6 @@ two:
   weather: MyString
   season: MyString
   nga_url: MyString
-  category_id: 
-  url_param: MyString
+  category: :mechanical
+  slug: wild-jade-hatchling
+  reviewed: true
