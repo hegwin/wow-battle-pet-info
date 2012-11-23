@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-call_lighting:
+call_lightning:
   blz_id: 204
   title_cn: 召唤闪电
   title_en: Call Lightning

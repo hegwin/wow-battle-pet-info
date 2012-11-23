@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'test_helper'
 
 class ZoneTest < ActiveSupport::TestCase
@@ -22,6 +23,22 @@ class ZoneTest < ActiveSupport::TestCase
     assert !zone.save
     assert zone.errors[:blz_id].any?
     assert zone.errors[:title_cn].any?
+  end
+
+  test "generate a friendly id" do
+    zone = Zone.new(blz_id: 30000,
+                    title_cn: "测试区域",
+                    title_en: "Test Zone")
+    assert zone.save
+    assert_equal 'test-zone', zone.slug
+  end
+
+  test "generate friend id sharing the indentical name" do
+    zone = Zone.new(blz_id: 30001,
+                   title_cn: '新灰谷',
+                   title_en: zones(:grey_valley).title_en)
+    assert zone.save
+    assert_not_equal zones(:grey_valley).slug, zone.slug
   end
 
 end

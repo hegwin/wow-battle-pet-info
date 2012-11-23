@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'test_helper'
 
 class PetTest < ActiveSupport::TestCase
@@ -15,6 +16,10 @@ class PetTest < ActiveSupport::TestCase
   end
 
   test "blizzard id must be unique" do
-    flunk
+    pet = Pet.new(blz_id: pets(:hatchling).blz_id, title_cn: "野生赤红雏龙", source: "宠物对战")
+    assert !pet.valid?
+    assert pet.errors[:blz_id].any?
+    pet.blz_id = 818
+    assert pet.valid?
   end
 end

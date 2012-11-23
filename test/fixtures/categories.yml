@@ -33,6 +33,16 @@ critter:
   slug: critter
   comments: 
 
+magic:
+  blz_id: 5
+  title_cn: 魔法
+  title_en: Magic
+  icon_url: magic.png
+  features: 魔法宠物不会从一次攻击中受到超过其最大生命值50%的伤害
+  decay_with:
+  restrain_on:
+  slug: magic
+  comments:
 beast:
   blz_id: 7
   title_cn: 野兽
