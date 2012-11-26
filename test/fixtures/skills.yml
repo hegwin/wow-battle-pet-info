@@ -17,7 +17,7 @@ roar:
   title_cn: 咆哮
   title_en: Roar
   description: "一声凶猛咆哮,造成10点伤害,并激怒使用者,使其造成的伤害提高25%,持续3轮"
-  hit_rate: 
+  hit_rate: 100
   category: :beast
   cd: 
   status: 

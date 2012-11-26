@@ -5,11 +5,11 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  pet_id: <%= ActiveRecord::Fixtures.identify(:hatchling) %>
-  skill_id: <%= ActiveRecord::Fixtures.identify(:call_lightning) %>
+  pet: hatchling
+  skill: call_lightning
   acquire_level: 2
 
 two:
-  pet: <%= ActiveRecord::Fixtures.identify(:hatchling) %>
-  skill: <%= ActiveRecord::Fixtures.identify(:roar) %>
+  pet: hatchling
+  skill: roar
   acquire_level: 15

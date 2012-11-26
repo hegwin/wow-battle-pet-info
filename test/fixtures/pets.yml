@@ -28,6 +28,6 @@ hatchling:
   weather: MyString
   season: MyString
   nga_url: MyString
-  category_id: 1
+  category: dragonkin
   slug: wild-jade-hatchling
   reviewed: true
