@@ -6,12 +6,8 @@ class Category < ActiveRecord::Base
 
   has_many :pets
   has_many :skills
-
-  def enemy
-    Category.find_by_restrain_on self.id
-  end
-
-  def rookie
-    Category.find_by_decay_with self.id
-  end
+  has_one :enemy, class_name: "Category", foreign_key: :restrain_on
+  has_one :rookie, class_name: "Category", foreign_key: :decay_with
+  belongs_to :restrain_on, class_name: "Category", foreign_key: :restrain_on
+  belongs_to :decay_with, class_name: "Category", foreign_key: :decay_with
 end
