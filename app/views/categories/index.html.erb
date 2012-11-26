@@ -17,8 +17,8 @@
     <td><%= image_tag category.icon_url, size: "24x24" %></td>
     <td><%= category.title_cn %></td>
     <td><%= category.features %></td>
-    <td><%= category.decay_with %></td>
-    <td><%= category.restrain_on %></td>
+    <td><%= image_tag category.decay.icon_url, size: "24x24" %></td>
+    <td><%= image_tag category.restrain.icon_url, size: "24x24" %></td>
     <td><%= link_to 'Show', category %></td>
     <td><%= link_to 'Edit', edit_category_path(category) %></td>
     <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>

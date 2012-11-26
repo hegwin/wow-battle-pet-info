@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121114071024) do
+ActiveRecord::Schema.define(:version => 20121126103813) do
 
   create_table "acquirings", :force => true do |t|
     t.integer  "pet_id",        :null => false
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(:version => 20121114071024) do
     t.string   "title_en"
     t.string   "icon_url"
     t.text     "features"
-    t.integer  "decay_with"
-    t.integer  "restrain_on"
+    t.integer  "decay_id"
+    t.integer  "restrain_id"
     t.string   "slug"
     t.text     "comments"
     t.datetime "created_at",  :null => false
@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(:version => 20121114071024) do
   end
 
   add_index "categories", ["blz_id"], :name => "index_categories_on_blz_id"
-  add_index "categories", ["decay_with"], :name => "index_categories_on_decay_with"
+  add_index "categories", ["decay_id"], :name => "index_categories_on_decay_id"
   add_index "categories", ["icon_url"], :name => "index_categories_on_icon_url"
-  add_index "categories", ["restrain_on"], :name => "index_categories_on_restrain_on"
+  add_index "categories", ["restrain_id"], :name => "index_categories_on_restrain_id"
   add_index "categories", ["slug"], :name => "index_categories_on_slug", :unique => true
   add_index "categories", ["title_cn"], :name => "index_categories_on_title_cn"
   add_index "categories", ["title_en"], :name => "index_categories_on_title_en"

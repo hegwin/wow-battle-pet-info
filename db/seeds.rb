@@ -32,9 +32,9 @@ Category.transaction do
     if line[0] =~ /\d/
       #category = Category.find_all_by_blz_id([line[0], line[3], line[4]])
       category = Category.find_by_blz_id(line[0])
-      restrain_on = Category.find_by_blz_id(line[3], select: :id).id
-      decay_with = Category.find_by_blz_id(line[4], select: :id).id
-      category.update_attributes({restrain_on: restrain_on, decay_with: decay_with})
+      restrain_on = Category.find_by_blz_id(line[3], select: :id)
+      decay_with = Category.find_by_blz_id(line[4], select: :id)
+      category.update_attributes({restrain: restrain_on, decay: decay_with})
     end
   end  
 end

@@ -6,7 +6,7 @@ humanoid:
   title_en: Humanoid
   icon_url: humanoid.png
   features: 人型生物如果在本轮造成伤害，则可回复最大生命值的4%。
-  decay_with: 
+  decay: beast
   restrain: dragonkin
   slug: humanoid
   comments: MyText
@@ -17,10 +17,21 @@ dragonkin:
   title_en: Dragonkin
   icon_url: dragonkin.png
   features: 当目标的生命值降低至25%以下时，龙类将在下一轮造成额外50%的伤害
-  restrain: :magic
-  decay: :undead
+  restrain: magic
+  decay: undead
   slug: dragonkin
   comments: MyText
+
+flying:
+  blz_id: 2
+  title_cn:
+  title_en:
+  icon_url: flying.png
+  features: 当生命值高于50%时，飞行生物的速度可额外提高50%
+  restrain: aquatic
+  decay: dragonkin
+  slug: flying
+  comments:
 
 undead:
   blz_id: 3
@@ -29,20 +40,9 @@ undead:
   icon_url: undead.png
   features: 亡灵宠物被杀死后，会复生战斗1轮
   restrain: humanoid
-  decay_with: 
+  decay: aquatic
   slug: undead
   comments: 
-
-flying:
-  blz_id: 2
-  title_cn:
-  title_en:
-  icon_url: flying.png
-  features: 当生命值高于50%时，飞行生物的速度可额外提高50%
-  restrain_on: 
-  decay: dragonkin
-  slug: flying
-  comments:
 
 critter:
   blz_id: 4
@@ -50,8 +50,8 @@ critter:
   title_en: Critter
   icon_url: critter.png
   features: 小动物会更快地解除群体控制效果
-  decay_with:
-  restrain_on:
+  decay: humanoid
+  restrain: undead
   slug: critter
   comments: 
 
@@ -61,10 +61,22 @@ magic:
   title_en: Magic
   icon_url: magic.png
   features: 魔法宠物不会从一次攻击中受到超过其最大生命值50%的伤害
-  decay_with:
-  restrain_on:
+  decay: mechanical
+  restrain: flying
   slug: magic
   comments:
+
+elemental:
+  blz_id: 6
+  title_cn: 元素
+  title_en: Elemental
+  icon_url: elemental.png
+  features: 元素无视所有天气效果
+  decay: critter
+  restrain: mechanical
+  slug: elemental
+  comments:
+
 
 beast:
   blz_id: 7
@@ -72,9 +84,20 @@ beast:
   title_en: Beast
   icon_url: beast.png
   features: 当生命值低于一半时，野兽造成25%的额外伤害
-  decay_with:
-  restrain_on:
+  decay: flying
+  restrain: critter
   slug: beast
+  comments: 
+
+aquatic:
+  blz_id: 8
+  title_cn: 水栖
+  title_en: Aquatic
+  icon_url: aquatic.png
+  features: 水栖宠物身上的有害持续伤害效果降低25%
+  decay: magic
+  restrain: elemental
+  slug: aquatic
   comments: 
 
 mechanical:
@@ -83,7 +106,7 @@ mechanical:
   title_en: Mechanical
   icon_url: mechanical.png
   features: 当生命值低于一半时，野兽造成25%的额外伤害
-  decay_with: 
-  restrain_on:
+  decay: elemental
+  restrain: beast
   slug: mechanical
   comments: 
