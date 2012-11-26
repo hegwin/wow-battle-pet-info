@@ -1,4 +1,10 @@
 <h1>Pets</h1>
+<div class="input-append">
+  <%= form_tag search_pets_path, method: :get, class: "form-horizontal" do %>
+    <%= text_field_tag "q", '', size: 16 -%><%= submit_tag 'Search',name: nil ,class: 'btn' %>
+  <% end -%>
+</div>
+
 
 <%= render partial: 'table' %>
 

@@ -3,7 +3,11 @@ WowPetBattleInfo::Application.routes.draw do
 
   resources :categories
 
-  resources :pets
+  resources :pets do
+    collection do
+      get :search
+    end
+  end
 
   resources :zones
 

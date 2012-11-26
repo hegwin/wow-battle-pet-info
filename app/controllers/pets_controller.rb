@@ -82,4 +82,10 @@ class PetsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def search
+    @pets = Pet.where('title_cn like ?', "%#{params[:q]}%").page(params[:page]).per(20).includes(:category).includes(:acquirings)
+
+    render :index
+  end
 end
