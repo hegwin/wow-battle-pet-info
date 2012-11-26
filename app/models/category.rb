@@ -8,6 +8,6 @@ class Category < ActiveRecord::Base
   has_many :skills
   has_one :enemy, class_name: "Category", foreign_key: :restrain_on
   has_one :rookie, class_name: "Category", foreign_key: :decay_with
-  belongs_to :restrain_on, class_name: "Category", foreign_key: :restrain_on
-  belongs_to :decay_with, class_name: "Category", foreign_key: :decay_with
+  belongs_to :restrain, class_name: "Category", foreign_key: :restrain_on
+  belongs_to :decay, class_name: "Category", foreign_key: :decay_with
 end

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SkillsControllerTest < ActionController::TestCase
   setup do
-    @skill = skills(:one)
+    @skill = skills(:call_lightning)
   end
 
   test "should get index" do

@@ -12,7 +12,7 @@ squirrel:
   weather:
   season:
   nga_url:
-  category: :critter
+  category: :mechanical
   slug: mechinacal-squirrel
   reviewed: false
 
@@ -28,6 +28,6 @@ hatchling:
   weather: MyString
   season: MyString
   nga_url: MyString
-  category: :mechanical
+  category_id: 1
   slug: wild-jade-hatchling
   reviewed: true

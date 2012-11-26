@@ -17,7 +17,7 @@
     <td><%=raw list_skill_icons pet %></td>
     <td><%= pet.source %></td>
     <td>Normal</td>
-    <td><%= image_tag "#{pet.category.slug}.png", size: "24x24" %></td>
+    <td><%= image_tag "#{pet.category.icon_url}", size: "24x24" %></td>
     <td><%= reviewed_label pet.reviewed %></td>
   </tr>
 <% end %>

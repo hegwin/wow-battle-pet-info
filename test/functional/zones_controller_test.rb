@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ZonesControllerTest < ActionController::TestCase
   setup do
-    @zone = zones(:one)
+    @zone = zones(:grey_valley)
   end
 
   test "should get index" do

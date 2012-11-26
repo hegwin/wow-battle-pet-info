@@ -1,26 +1,51 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 humanoid:
+  id: 0
   blz_id: 0
   title_cn: 人形
   title_en: Humanoid
-  icon_url: MyString
+  icon_url: humanoid.png
   features: 人型生物如果在本轮造成伤害，则可回复最大生命值的4%。
-  decay_with: 1
+  decay_with: 
   restrain_on: 1
   slug: humanoid
   comments: MyText
 
 dragonkin:
+  id: 1
   blz_id: 1
   title_cn: 龙类
   title_en: Dragonkin
-  icon_url: MyString
+  icon_url: dragonkin.png
   features: 当目标的生命值降低至25%以下时，龙类将在下一轮造成额外50%的伤害
-  decay_with: 1
-  restrain_on: 1
+  restrain: :magic
+  decay: :undead
   slug: dragonkin
   comments: MyText
+
+undead:
+  id: 3
+  blz_id: 3
+  title_cn: 亡灵
+  title_en: Undead
+  icon_url: undead.png
+  features: 亡灵宠物被杀死后，会复生战斗1轮
+  restrain_on: 0
+  decay_with: 
+  slug: undead
+  comments: 
+
+flying:
+  blz_id: 2
+  title_cn:
+  title_en:
+  icon_url: flying.png
+  features: 当生命值高于50%时，飞行生物的速度可额外提高50%
+  restrain_on: 
+  decay_with: 1
+  slug: flying
+  comments:
 
 critter:
   blz_id: 4
@@ -43,6 +68,7 @@ magic:
   restrain_on:
   slug: magic
   comments:
+
 beast:
   blz_id: 7
   title_cn: 野兽

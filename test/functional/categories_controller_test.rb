@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CategoriesControllerTest < ActionController::TestCase
   setup do
-    @category = categories(:one)
+    @category = categories(:dragonkin)
   end
 
   test "should get index" do
@@ -18,14 +18,14 @@ class CategoriesControllerTest < ActionController::TestCase
 
   test "should create category" do
     assert_difference('Category.count') do
-      post :create, category: { blz_id: @category.blz_id, comments: @category.comments, decay_with: @category.decay_with, features: @category.features, icon_url: @category.icon_url, restrain_on: @category.restrain_on, slug: @category.slug, title_cn: @category.title_cn, title_en: @category.title_en }
+      post :create, category: { blz_id: @category.blz_id, comments: @category.comments, decay_with: @category.decay_with, features: @category.features, icon_url: @category.icon_url, restrain_on: @category.restrain_on, title_cn: @category.title_cn, title_en: @category.title_en }
     end
 
     assert_redirected_to category_path(assigns(:category))
   end
 
   test "should show category" do
-    get :show, id: @category
+    get :show, id: @category.slug
     assert_response :success
   end
 
@@ -35,7 +35,7 @@ class CategoriesControllerTest < ActionController::TestCase
   end
 
   test "should update category" do
-    put :update, id: @category, category: { blz_id: @category.blz_id, comments: @category.comments, decay_with: @category.decay_with, features: @category.features, icon_url: @category.icon_url, restrain_on: @category.restrain_on, slug: @category.slug, title_cn: @category.title_cn, title_en: @category.title_en }
+    put :update, id: @category, category: { blz_id: @category.blz_id, comments: @category.comments, decay_with: @category.decay_with, features: @category.features, icon_url: @category.icon_url, restrain_on: @category.restrain_on, title_cn: @category.title_cn, title_en: @category.title_en }
     assert_redirected_to category_path(assigns(:category))
   end
 
