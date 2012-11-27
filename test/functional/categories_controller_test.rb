@@ -25,7 +25,12 @@ class CategoriesControllerTest < ActionController::TestCase
   end
 
   test "should show category" do
-    get :show, id: @category.slug
+    get :show, id: @category
+    assert_response :success
+  end
+
+  test "should show category via friendly id" do
+    get :show, id: @category
     assert_response :success
   end
 

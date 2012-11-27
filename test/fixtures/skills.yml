@@ -1,5 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
+breath:
+  blz_id: 115
+  title_cn: 吐息
+  title_en: Breath
+  description: "Overwhelms the enemy with draconic breath, dealing 20 damage."
+  hit_rate: 100
+  category: dragonkin
+  cd: 0
+  status:
+  comments:
+  slug: breath
+
 call_lightning:
   blz_id: 204
   title_cn: 召唤闪电
@@ -11,6 +23,17 @@ call_lightning:
   status: 
   comments: MyText
   slug: call-lightning
+
+tail_sweep:
+  blz_id: 122
+  title_cn: 扫尾
+  title_en: Tail Sweep
+  description: "Deals 18 damage.\nDeals 7 additional damage if the user goes last."
+  hit_rate: 100
+  category: dragonkin
+  status:
+  comments:
+  slug: tail-sweep
 
 roar:
   blz_id: 347

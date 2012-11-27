@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'test_helper'
 
 class PetsControllerTest < ActionController::TestCase
@@ -29,6 +30,10 @@ class PetsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should show pet via friendly id" do
+    flunk
+  end
+
   test "should get edit" do
     get :edit, id: @pet
     assert_response :success
@@ -45,5 +50,12 @@ class PetsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to pets_path
+  end
+
+  test "shoud show search results" do
+    get :search, q: @pet.title_cn
+    assert_response :success
+    assert_select "table.table tr", 2
+    assert_select "table.table tr:nth-child(2) td:nth-child(2)", @pet.title_cn
   end
 end

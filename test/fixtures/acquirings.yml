@@ -6,10 +6,20 @@
 #
 one:
   pet: hatchling
-  skill: call_lightning
-  acquire_level: 2
+  skill: breath
+  acquire_level: 1
 
 two:
+  pet: hatchling
+  skill: call_lightning
+  acquire_level: 15
+
+four:
+  pet: hatchling
+  skill: tail_sweep
+  acquire_level: 10
+
+five:
   pet: hatchling
   skill: roar
   acquire_level: 15

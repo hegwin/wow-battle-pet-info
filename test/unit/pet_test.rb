@@ -22,4 +22,9 @@ class PetTest < ActiveSupport::TestCase
     pet.blz_id = 818
     assert pet.valid?
   end
+
+  test "hatchling main skill category should be dragonkin" do
+    pet = pets(:hatchling)
+    assert_equal categories(:dragonkin), pet.main_skill_category
+  end
 end

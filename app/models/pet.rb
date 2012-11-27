@@ -11,6 +11,6 @@ class Pet < ActiveRecord::Base
   has_many :categories_of_skills, through: :skills, source: :category
 
   def main_skill_category
-    categories_of_skills.group('categories.id').order('count(*) desc').limit(1)
+    categories_of_skills.group('categories.id').order('count(*) desc').first
   end
 end
