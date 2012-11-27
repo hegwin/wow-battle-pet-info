@@ -18,7 +18,7 @@ class SkillsControllerTest < ActionController::TestCase
 
   test "should create skill" do
     assert_difference('Skill.count') do
-      post :create, skill: { blz_id: @skill.blz_id, category_id: @skill.category_id, cd: @skill.cd, comments: @skill.comments, description: @skill.description, hit_rate: @skill.hit_rate, status: @skill.status, title_cn: @skill.title_cn, title_en: @skill.title_en }
+      post :create, skill: { blz_id: @skill.blz_id + 50000, category_id: @skill.category_id, cd: @skill.cd, comments: @skill.comments, description: @skill.description, hit_rate: @skill.hit_rate, status: @skill.status, title_cn: @skill.title_cn, title_en: @skill.title_en }
     end
 
     assert_redirected_to skill_path(assigns(:skill))

@@ -18,7 +18,7 @@ class ZonesControllerTest < ActionController::TestCase
 
   test "should create zone" do
     assert_difference('Zone.count') do
-      post :create, zone: { blz_id: @zone.blz_id, description: @zone.description, parent_id: @zone.parent_id, title_cn: @zone.title_cn, title_en: @zone.title_en }
+      post :create, zone: { blz_id: @zone.blz_id + 30000, description: @zone.description, parent_id: @zone.parent_id, title_cn: @zone.title_cn + "1", title_en: @zone.title_en.insert(0, "New ") }
     end
 
     assert_redirected_to zone_path(assigns(:zone))

@@ -18,7 +18,7 @@ class PetsControllerTest < ActionController::TestCase
 
   test "should create pet" do
     assert_difference('Pet.count') do
-      post :create, pet: { blz_id: @pet.blz_id, category_id: @pet.category_id, description: @pet.description, event: @pet.event, icon_url: @pet.icon_url, nga_url: @pet.nga_url, season: @pet.season, source: @pet.source, status: @pet.status, title_cn: @pet.title_cn, title_en: @pet.title_en, weather: @pet.weather }
+      post :create, pet: { blz_id: @pet.blz_id + 10000, category_id: @pet.category_id, description: @pet.description, event: @pet.event, icon_url: @pet.icon_url, nga_url: @pet.nga_url, season: @pet.season, source: @pet.source, status: @pet.status, title_cn: @pet.title_cn, title_en: @pet.title_en, weather: @pet.weather }
     end
 
     assert_redirected_to pet_path(assigns(:pet))
