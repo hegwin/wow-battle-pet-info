@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+ashuram:
+  name: ashuram
+  password_digest: <%= BCrypt::Password.create('pswd') %>
+
+two:
+  name: MyString
+  password_digest: MyString

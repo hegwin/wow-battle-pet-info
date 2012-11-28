@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121126103813) do
+ActiveRecord::Schema.define(:version => 20121128072748) do
 
   create_table "acquirings", :force => true do |t|
     t.integer  "pet_id",        :null => false
@@ -107,6 +107,13 @@ ActiveRecord::Schema.define(:version => 20121126103813) do
   add_index "skills", ["status"], :name => "index_skills_on_status"
   add_index "skills", ["title_cn"], :name => "index_skills_on_title_cn"
   add_index "skills", ["title_en"], :name => "index_skills_on_title_en"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "zones", :force => true do |t|
     t.integer  "blz_id"
