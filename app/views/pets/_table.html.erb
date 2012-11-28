@@ -14,7 +14,11 @@
   <tr>
     <td><%= image_tag pet.icon_url,:style => "height: 24px" %></td>
     <td><%= link_to pet.title_cn, pet %></td>
-    <td><%=raw list_skill_icons pet %></td>
+    <td>
+      <% pet.skills.each do |skill| %>
+        <%= link_to image_tag("skills/#{skill.blz_id}.jpg", size: "24x24"), skill_path(skill), rel: 'popover', "data-content" => skill.description.gsub("\n", '<br />'), "data-original-title" => skill.title_cn %>
+      <% end %>
+    </td>
     <td><%= pet.source %></td>
     <td>Normal</td>
     <td><%= image_tag "#{pet.category.icon_url}", size: "24x24" %></td>
