@@ -1,4 +1,5 @@
 class SkillsController < ApplicationController
+  before_filter :authorize, except: [:index, :show]
   # GET /skills
   # GET /skills.json
   def index

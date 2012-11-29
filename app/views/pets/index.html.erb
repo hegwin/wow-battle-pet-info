@@ -1,4 +1,6 @@
-<h1>Pets</h1>
+<div class="page-header">
+  <h1>Pets</h1>
+</div>
 <div class="input-append">
   <%= form_tag search_pets_path, method: :get, class: "form-horizontal" do %>
     <%= text_field_tag "q", '', size: 16 -%><%= submit_tag 'Search',name: nil ,class: 'btn' %>
@@ -8,6 +10,8 @@
 
 <%= render partial: 'table' %>
 
-<br />
-
-<%= link_to 'New Pet', new_pet_path %>
+<% if session[:user_id] %>
+  <div>
+    <%= link_to 'New Pet', new_pet_path, class: "btn" %>
+  </div>
+<% end %>

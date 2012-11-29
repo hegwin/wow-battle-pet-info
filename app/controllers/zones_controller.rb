@@ -1,4 +1,5 @@
 class ZonesController < ApplicationController
+  before_filter :authorize, except: [:index, :show]
   # GET /zones
   # GET /zones.json
   def index

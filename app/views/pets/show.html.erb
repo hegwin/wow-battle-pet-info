@@ -99,7 +99,10 @@
 </p>
 
 
-
-<%= link_to 'Edit', edit_pet_path(@pet) %> |
-<%= link_to 'Destroy', @pet, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', pets_path %>
+<%= link_to raw('<i class="icon-chevron-left"></i> Back'), pets_path, class: "btn" %>
+<% if session[:user_id] %>
+  <div class="form-actions">
+    <%= link_to 'Edit', edit_pet_path(@pet), class: 'btn btn-primary' %>
+    <%= button_to 'Destroy', @pet, method: :delete, confirm: 'Are you sure?' , class: 'btn btn-danger' %> 
+  </div>
+<% end %>
