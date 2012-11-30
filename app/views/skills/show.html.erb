@@ -45,6 +45,10 @@
   <%= @skill.comments %>
 </p>
 
-
-<%= link_to 'Edit', edit_skill_path(@skill) %> |
-<%= link_to 'Back', skills_path %>
+<%= link_to raw('<i class="icon-chevron-left"></i> Back'), skills_path, class: "btn" %>
+<% if session[:user_id] %>
+  <div class="admin-btn-panel form-actions">
+    <%= link_to 'Edit', edit_skill_path(@skill), class: 'btn btn-primary' %>
+    <%= button_to 'Destroy', @skill, method: :delete, confirm: 'Are you sure?' , class: 'btn btn-danger' %> 
+  </div>
+<% end %>

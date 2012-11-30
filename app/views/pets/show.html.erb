@@ -53,7 +53,7 @@
         <td><%= show_hit_rate skill.hit_rate %></td>
       </tr>
     <% end -%>
-  <tbody>
+  </tbody>
 </table>
 
 <h2></h2>
@@ -101,7 +101,7 @@
 
 <%= link_to raw('<i class="icon-chevron-left"></i> Back'), pets_path, class: "btn" %>
 <% if session[:user_id] %>
-  <div class="form-actions">
+  <div class="admin-btn-panel form-actions">
     <%= link_to 'Edit', edit_pet_path(@pet), class: 'btn btn-primary' %>
     <%= button_to 'Destroy', @pet, method: :delete, confirm: 'Are you sure?' , class: 'btn btn-danger' %> 
   </div>

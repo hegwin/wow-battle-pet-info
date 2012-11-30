@@ -11,7 +11,7 @@
 <%= render partial: 'table' %>
 
 <% if session[:user_id] %>
-  <div>
+  <div class="admin-btn-panel">
     <%= link_to 'New Pet', new_pet_path, class: "btn" %>
   </div>
 <% end %>
