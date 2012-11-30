@@ -2,11 +2,6 @@
 require 'test_helper'
 
 class SkillTest < ActiveSupport::TestCase
-  fixtures :skills
-  fixtures :categories
-  # test "the truth" do
-  #   assert true
-  # end
   test "skill with empty attributes must not be valid" do
     skill = Skill.new
     assert !skill.save
@@ -25,5 +20,17 @@ class SkillTest < ActiveSupport::TestCase
     assert !skill.save
     skill.blz_id = 484
     assert skill.valid?
+  end
+
+  test "generate friendly id" do
+    skill = Skill.new(blz_id:      572,
+                      title_cn:    "泥石流",
+                      category:    categories(:critter),
+                      description: "Calls down a mudslide, deadling 30 damage and causing muddy weather for 9 rounds",
+                      title_en:    "Mud slide",
+                      cd:          3,
+                      hit_rate:    100)
+    assert skill.save
+    assert_equal "mud-slide", skill.slug
   end
 end

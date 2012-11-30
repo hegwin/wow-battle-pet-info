@@ -7,7 +7,11 @@ WowPetBattleInfo::Application.routes.draw do
 
   resources :users
 
-  resources :skills
+  resources :skills do
+    collection do
+      get :search
+    end
+  end
 
   resources :categories
 

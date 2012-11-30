@@ -64,10 +64,10 @@ end
 
 Skill.transaction do
   Skill.delete_all
-  CSV.foreach("#{Rails.root}/db/data_src/skills.csv") do |blz_id, title_cn, category, hit_rate, cd, description, _|
+  CSV.foreach("#{Rails.root}/db/data_src/skills.csv") do |blz_id, title_cn, category, hit_rate, cd, description, _, title_en|
     if blz_id =~ /\d/ 
       category = Category.find_by_title_en(category)
-      Skill.create(blz_id: blz_id, title_cn: title_cn, category: category, hit_rate: hit_rate, cd: cd, description: description)
+      Skill.create(blz_id: blz_id, title_cn: title_cn, category: category, hit_rate: hit_rate, cd: cd, description: description, title_en: title_en)
     end
   end
 end

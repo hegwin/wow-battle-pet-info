@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'test_helper'
 
 class SkillsControllerTest < ActionController::TestCase
@@ -29,6 +30,11 @@ class SkillsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should show skill via friendly id" do
+    get :show, id: @skill.slug
+    assert_response :success
+  end
+
   test "should get edit" do
     get :edit, id: @skill
     assert_response :success
@@ -45,5 +51,12 @@ class SkillsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to skills_path
+  end
+  
+  test "should get search result" do
+    get :search, q: @skill.title_cn
+    assert_response :success
+    assert_select "table.table tr", 2
+    assert_select "table.table tr:nth-child(2) td:nth-child(2)", @skill.title_cn
   end
 end

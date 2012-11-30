@@ -1,4 +1,12 @@
-<h1>Skills</h1>
+<div class="page-header">
+  <h1>Skills</h1>
+</div>
+
+<div class="input-append">
+  <%= form_tag search_skills_path, method: :get, class: "form-horizontal" do %>
+    <%= text_field_tag "q", '', size: 16 -%><%= submit_tag 'Search',name: nil ,class: 'btn' %>
+  <% end -%>
+</div>
 
 <%= paginate @skills %>
 <table class="table table-striped">
@@ -9,22 +17,16 @@
     <th>Hit rate</th>
     <th>Category</th>
     <th>Cd</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @skills.each do |skill| %>
   <tr>
-    <td><%= image_tag "skills/#{skill.blz_id}.jpg" %></td>
-    <td><%= skill.title_cn %></td>
-    <td><%= truncate skill.description, length: 20 %></td>
+    <td><%= image_tag "skills/#{skill.blz_id}.jpg", size: "24x24" %></td>
+    <td><%= link_to skill.title_cn, skill_path(skill) %></td>
+    <td><%= raw skill.description.gsub("\n", '<br />') %></td>
     <td><%= number_to_percentage skill.hit_rate, precision: 0 %></td>
-    <td><%= image_tag skill.category.icon_url %></td>
+    <td><%= image_tag skill.category.icon_url, size: "24x24" %></td>
     <td><%= skill.cd %></td>
-    <td><%= link_to 'Show', skill %></td>
-    <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
-    <td><%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
