@@ -1,31 +1,15 @@
-<h1>Listing zones</h1>
+<div class="page-header">
+  <h1>区域列表</h1>
+</div>
 
-<table>
-  <tr>
-    <th>Blz</th>
-    <th>Title cn</th>
-    <th>Title en</th>
-    <th>Parent</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<ul id="zones">
+  <% @zones.each do |zone| %>
+    <li><%= link_to  zone.title_cn, sublist_zone_path(zone), id: zone.slug %></li>
+  <% end %>
+</ul>
 
-<% @zones.each do |zone| %>
-  <tr>
-    <td><%= zone.blz_id %></td>
-    <td><%= zone.title_cn %></td>
-    <td><%= zone.title_en %></td>
-    <td><%= zone.parent_id %></td>
-    <td><%= zone.description %></td>
-    <td><%= link_to 'Show', zone %></td>
-    <td><%= link_to 'Edit', edit_zone_path(zone) %></td>
-    <td><%= link_to 'Destroy', zone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% if session[:user_id] %>
+  <div class="admin-btn-panel">
+    <%= link_to 'New Zone', new_zone_path, class: "btn" %>
+  </div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Zone', new_zone_path %>

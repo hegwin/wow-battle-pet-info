@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1><%= @zone.title_cn %></h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Logo</th>
+      <th>Title</th>
+      <th>Zone Level</th>
+      <th>Pet Level</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sub_zones.each do |zone| %>
+      <tr>
+        <td><%= image_tag "zones/#{zone.blz_id}.jpg", size: '24x24' %></td>
+        <td><%= link_to zone.title_cn, zone_path(zone) %></td>
+        <td>1-90</td>
+        <td>1-25</td>
+      </tr>  
+    <% end %>
+  </tbody>
+
+</table>
+
+<%= link_to raw('<i class="icon-chevron-left"></i> Back'), zones_path, class: "btn" %>

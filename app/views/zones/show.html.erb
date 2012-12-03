@@ -10,13 +10,14 @@
   <%= @zone.description %>
 </p>
 
-<% unless @children_zones.blank? %>
-  <ul>
-    <% @children_zones.each do |zone| %>
-      <li><%= link_to zone.title_cn, zone_path(zone) %></li>
-    <% end %>
-  </ul>
-<% end %>
+<h2>Pets</h2>
 
-<%= link_to 'Edit', edit_zone_path(@zone) %> |
-<%= link_to 'Back', zones_path %>
+<%= render partial: 'pets/table' %>
+
+<%= link_to raw('<i class="icon-chevron-left"></i> Back'), zones_path, class: "btn" %>
+<% if session[:user_id] %>
+  <div class="admin-btn-panel form-actions">
+    <%= link_to 'Edit', edit_zone_path(@zone), class: 'btn btn-primary' %>
+    <%= button_to 'Destroy', @zone, method: :delete, confirm: 'Are you sure?' , class: 'btn btn-danger' %> 
+  </div>
+<% end %>
