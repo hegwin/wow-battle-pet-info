@@ -13,22 +13,30 @@ ul#zones {
       border: 1px solid white;
       width: 300px;
       height: 80px;
+      background-color: #DDD;
       background-image: url("/assets/all_zones.jpg");
     }
     
     a:hover {
       border: 1px solid #DDD;
     }
+    a#padaria {
+      background-position: 0 80px;
+    }
     a#the-maelstrom {
       background-position: 0 160px;
     }
     a#northrend {
-      background-position: 0 240px
+      background-position: 0 240px;
     }
     a#outland {
       background-position: 0 320px;
     }
-    
-
+    a#eastern-kingdoms {
+      background-position: 0 400px;
+    }
+    a#kalimdor {
+      background-position: 0 480px;
+    }
   }
 }

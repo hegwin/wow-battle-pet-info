@@ -4,7 +4,7 @@
 
 <ul id="zones">
   <% @zones.each do |zone| %>
-    <li><%= link_to  zone.title_cn, sublist_zone_path(zone), id: zone.slug %></li>
+    <li><%= link_to  '', sublist_zone_path(zone), id: zone.slug, title: zone.title_cn %></li>
   <% end %>
 </ul>
 
