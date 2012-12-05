@@ -1,123 +1,132 @@
-10000,"东部王国",,"Eastern Kingdoms"
-10001,"卡利姆多",,"Kalimdor"
-10008,"外域",,"Outland"
-10010,"诺森德",,"Northrend"
-10011,"大漩涡",,"The Maelstrom"
-10012,"潘达利亚",,"Pandaria"
-5736,"迷踪岛",10012,"The Wandering Isle"
-5785,"翡翠林",10012,"The Jade Forest"
-5805,"四风谷",10012,"Valley of the Four Winds"
-5840,"锦绣谷",10012,"Vale of Eternal Blossoms"
-5841,"昆莱山",10012,"Kun-Lai Summit"
-5842,"螳螂高原",10012,"Townlong Steppes"
-6006,"雾纱栈道",10012,"The Veiled Stair"
-6134,"卡桑琅丛林",10012,"Krasarang Wilds"
-6138,"恐惧废土",10012,"Dread Wastes"
-6141,"双月殿",10012,"Shrine of Two Moons"
-6142,"七星殿",10012,"Shrine of Seven Stars"
-4720,"失落群岛",10011,"The Lost Isles"
-4737,"科赞",10011,"Kezan"
-5042,"深岩之洲",10011,"Deepholm"
-5095,"托尔巴拉德",10011,"Tol Barad"
-5389,"托尔巴拉德半岛",10011,"Tol Barad Peninsula"
-5416,"大漩涡",10011,"The Maelstrom"
-5630,"大漩涡",10011,"The Maelstrom"
-65,"龙骨荒野",10010,"Dragonblight"
-66,"祖达克",10010,"Zul'Drak"
-67,"风暴峭壁",10010,"The Storm Peaks"
-210,"冰冠冰川",10010,"Icecrown"
-394,"灰熊丘陵",10010,"Grizzly Hills"
-495,"嚎风峡湾",10010,"Howling Fjord"
-2817,"晶歌森林",10010,"Crystalsong Forest"
-3537,"北风苔原",10010,"Borean Tundra"
-3711,"索拉查盆地",10010,"Sholazar Basin"
-4197,"冬拥湖",10010,"Wintergrasp"
-4395,"达拉然",10010,"Dalaran"
-4742,"洛斯加尔登陆点",10010,"Hrothgar's Landing"
-3430,"永歌森林",10008,"Eversong Woods"
-3433,"幽魂之地",10008,"Ghostlands"
-3483,"地狱火半岛",10008,"Hellfire Peninsula"
-3487,"银月城",10008,"Silvermoon City"
-3518,"纳格兰",10008,"Nagrand"
-3519,"泰罗卡森林",10008,"Terokkar Forest"
-3520,"影月谷",10008,"Shadowmoon Valley"
-3521,"赞加沼泽",10008,"Zangarmarsh"
-3522,"刀锋山",10008,"Blade's Edge Mountains"
-3523,"虚空风暴",10008,"Netherstorm"
-3524,"秘蓝岛",10008,"Azuremyst Isle"
-3525,"秘血岛",10008,"Bloodmyst Isle"
-3557,"埃索达",10008,"The Exodar"
-3703,"沙塔斯城",10008,"Shattrath City"
-4080,"奎尔丹纳斯岛",10008,"Isle of Quel'Danas"
-6455,"逐日岛",10008,"Sunstrider Isle"
-6456,"埃门谷",10008,"Ammen Vale"
-14,"杜隆塔尔",10001,"Durotar"
-15,"尘泥沼泽",10001,"Dustwallow Marsh"
-16,"艾萨拉",10001,"Azshara"
-17,"北贫瘠之地",10001,"Northern Barrens"
-141,"泰达希尔",10001,"Teldrassil"
-148,"黑海岸",10001,"Darkshore"
-215,"莫高雷",10001,"Mulgore"
-331,"灰谷",10001,"Ashenvale"
-357,"菲拉斯",10001,"Feralas"
-361,"费伍德森林",10001,"Felwood"
-400,"千针石林",10001,"Thousand Needles"
-405,"凄凉之地",10001,"Desolace"
-406,"石爪山脉",10001,"Stonetalon Mountains"
-440,"塔纳利斯",10001,"Tanaris"
-490,"安戈洛环形山",10001,"Un'Goro Crater"
-493,"月光林地",10001,"Moonglade"
-616,"海加尔山",10001,"Mount Hyjal"
-618,"冬泉谷",10001,"Winterspring"
-1377,"希利苏斯",10001,"Silithus"
-1637,"奥格瑞玛",10001,"Orgrimmar"
-1638,"雷霆崖",10001,"Thunder Bluff"
-1657,"达纳苏斯",10001,"Darnassus"
-4709,"南贫瘠之地",10001,"Southern Barrens"
-5034,"奥丹姆",10001,"Uldum"
-5695,"安其拉：堕落王国",10001,"Ahn'Qiraj: The Fallen Kingdom"
-5733,"熔火前线",10001,"Molten Front"
-6450,"幽影谷",10001,"Shadowglen"
-6451,"试炼谷",10001,"Valley of Trials"
-6452,"纳拉其营地",10001,"Camp Narache"
-6453,"回音群岛",10001,"Echo Isles"
-1,"丹莫罗",10000,"Dun Morogh"
-3,"荒芜之地",10000,"Badlands"
-4,"诅咒之地",10000,"Blasted Lands"
-8,"悲伤沼泽",10000,"Swamp of Sorrows"
-10,"暮色森林",10000,"Duskwood"
-11,"湿地",10000,"Wetlands"
-12,"艾尔文森林",10000,"Elwynn Forest"
-28,"西瘟疫之地",10000,"Western Plaguelands"
-33,"北荆棘谷",10000,"Northern Stranglethorn"
-38,"洛克莫丹",10000,"Loch Modan"
-40,"西部荒野",10000,"Westfall"
-41,"逆风小径",10000,"Deadwind Pass"
-44,"赤脊山",10000,"Redridge Mountains"
-45,"阿拉希高地",10000,"Arathi Highlands"
-46,"燃烧平原",10000,"Burning Steppes"
-47,"辛特兰",10000,"The Hinterlands"
-51,"灼热峡谷",10000,"Searing Gorge"
-85,"提瑞斯法林地",10000,"Tirisfal Glades"
-130,"银松森林",10000,"Silverpine Forest"
-139,"东瘟疫之地",10000,"Eastern Plaguelands"
-267,"希尔斯布莱德丘陵",10000,"Hillsbrad Foothills"
-1497,"幽暗城",10000,"Undercity"
-1519,"暴风城",10000,"Stormwind City"
-1537,"铁炉堡",10000,"Ironforge"
-4298,"东瘟疫之地：血色领地",10000,"Plaguelands: The Scarlet Enclave"
-4706,"吉尔尼斯废墟",10000,"Ruins of Gilneas"
-4714,"吉尔尼斯",10000,"Gilneas"
-4755,"吉尔尼斯城",10000,"Gilneas City"
-4815,"柯尔普萨之森",10000,"Vashj'ir: Kelp'thar Forest"
-4922,"暮光高地",10000,"Twilight Highlands"
-5144,"烁光海床",10000,"Vashj'ir: Shimmering Expanse"
-5145,"无底海渊",10000,"Vashj'ir: Abyssal Depths"
-5146,"瓦丝琪尔",10000,"Vashj'ir"
-5287,"荆棘谷海角",10000,"The Cape of Stranglethorn"
-5339,"荆棘谷",10000,"Stranglethorn Vale"
-5351,"吉尔尼斯城废墟",10000,"Ruins of Gilneas City"
-6170,"北郡",10000,"Northshire"
-6176,"寒脊山谷",10000,"Coldridge Valley"
-6454,"丧钟镇",10000,"Deathknell"
-6457,"新工匠镇",10000,"New Tinkertown"
+10000,"东部王国",,"Eastern Kingdoms",,
+10001,"卡利姆多",,"Kalimdor",,
+10008,"外域",,"Outland",,
+10010,"诺森德",,"Northrend",,
+10011,"大漩涡",,"The Maelstrom",,
+10012,"潘达利亚",,"Pandaria",,
+10002,"团队与地下城",,"Dungeons and Raids",,
+5736,"迷踪岛",10012,"The Wandering Isle",,
+5785,"翡翠林",10012,"The Jade Forest","85-86","23-25"
+5805,"四风谷",10012,"Valley of the Four Winds","86-87","23-25"
+5840,"锦绣谷",10012,"Vale of Eternal Blossoms",90,
+5841,"昆莱山",10012,"Kun-Lai Summit","87-88","23-25"
+5842,"螳螂高原",10012,"Townlong Steppes","88-89","24-25"
+6006,"雾纱栈道",10012,"The Veiled Stair",,"23-25"
+6134,"卡桑琅丛林",10012,"Krasarang Wilds","89-90","24-25"
+6138,"恐惧废土",10012,"Dread Wastes","89-90","24-25"
+6141,"双月殿",10012,"Shrine of Two Moons",,1
+6142,"七星殿",10012,"Shrine of Seven Stars",,1
+4720,"失落群岛",10011,"The Lost Isles",12,
+4737,"科赞",10011,"Kezan","1-5",
+5042,"深岩之洲",10011,"Deepholm","82-83","22-23"
+5095,"托尔巴拉德",10011,"Tol Barad","84-85","23-24"
+5389,"托尔巴拉德半岛",10011,"Tol Barad Peninsula",85,"23-24"
+5416,"大漩涡",10011,"The Maelstrom",,
+5630,"大漩涡",10011,"The Maelstrom",,
+65,"龙骨荒野",10010,"Dragonblight","71-75","22-23"
+66,"祖达克",10010,"Zul'Drak","74-76","22-23"
+67,"风暴峭壁",10010,"The Storm Peaks","77-80","22-23"
+210,"冰冠冰川",10010,"Icecrown","77-80","22-23"
+394,"灰熊丘陵",10010,"Grizzly Hills","73-75","21-22"
+495,"嚎风峡湾",10010,"Howling Fjord","68-72","22-23"
+2817,"晶歌森林",10010,"Crystalsong Forest","77-80","22-23"
+3537,"北风苔原",10010,"Borean Tundra","68-72","20-22"
+3711,"索拉查盆地",10010,"Sholazar Basin","76-78","21-22"
+4197,"冬拥湖",10010,"Wintergrasp","77-80",
+4395,"达拉然",10010,"Dalaran",,
+4742,"洛斯加尔登陆点",10010,"Hrothgar's Landing","77-80",
+3430,"永歌森林",10008,"Eversong Woods","1-10","1-2"
+3433,"幽魂之地",10008,"Ghostlands","10-20","3-6"
+3483,"地狱火半岛",10008,"Hellfire Peninsula","58-63","17-18"
+3487,"银月城",10008,"Silvermoon City",,1
+3518,"纳格兰",10008,"Nagrand","64-67","18-19"
+3519,"泰罗卡森林",10008,"Terokkar Forest","62-65","18-19"
+3520,"影月谷",10008,"Shadowmoon Valley","67-70","20-21"
+3521,"赞加沼泽",10008,"Zangarmarsh","60-64","18-19"
+3522,"刀锋山",10008,"Blade's Edge Mountains","65-68","18-20"
+3523,"虚空风暴",10008,"Netherstorm","67-70","20-21"
+3524,"秘蓝岛",10008,"Azuremyst Isle","1-10","1-2"
+3525,"秘血岛",10008,"Bloodmyst Isle","1-10","3-6"
+3557,"埃索达",10008,"The Exodar",,1
+3703,"沙塔斯城",10008,"Shattrath City",,1
+4080,"奎尔丹纳斯岛",10008,"Isle of Quel'Danas",,
+6455,"逐日岛",10008,"Sunstrider Isle",,
+6456,"埃门谷",10008,"Ammen Vale",,
+14,"杜隆塔尔",10001,"Durotar","1-10","1-2"
+15,"尘泥沼泽",10001,"Dustwallow Marsh",,"12-13"
+16,"艾萨拉",10001,"Azshara","10-20","3-6"
+17,"北贫瘠之地",10001,"Northern Barrens","10-20","3-4"
+141,"泰达希尔",10001,"Teldrassil","1-10","1-2"
+148,"黑海岸",10001,"Darkshore","10-20","3-6"
+215,"莫高雷",10001,"Mulgore","1-10","1-2"
+331,"灰谷",10001,"Ashenvale","20-25","4-6"
+357,"菲拉斯",10001,"Feralas","35-40","11-12"
+361,"费伍德森林",10001,"Felwood","45-50","14-15"
+400,"千针石林",10001,"Thousand Needles","40-45","13-14"
+405,"凄凉之地",10001,"Desolace","30-35","7-9"
+406,"石爪山脉",10001,"Stonetalon Mountains","35-30","5-7"
+440,"塔纳利斯",10001,"Tanaris","45-50","13-14"
+490,"安戈洛环形山",10001,"Un'Goro Crater","50-55","15-16"
+493,"月光林地",10001,"Moonglade","55-60","15-16"
+616,"海加尔山",10001,"Mount Hyjal","80-82","22-24"
+618,"冬泉谷",10001,"Winterspring","10-20","3-6"
+1377,"希利苏斯",10001,"Silithus","55-60","16-17"
+1637,"奥格瑞玛",10001,"Orgrimmar",,1
+1638,"雷霆崖",10001,"Thunder Bluff",,1
+1657,"达纳苏斯",10001,"Darnassus",,1
+4709,"南贫瘠之地",10001,"Southern Barrens","30-35","9-10"
+5034,"奥丹姆",10001,"Uldum","83-84","23-24"
+5695,"安其拉：堕落王国",10001,"Ahn'Qiraj: The Fallen Kingdom",,"16-17"
+5733,"熔火前线",10001,"Molten Front",,
+6450,"幽影谷",10001,"Shadowglen",,
+6451,"试炼谷",10001,"Valley of Trials",,
+6452,"纳拉其营地",10001,"Camp Narache",,
+6453,"回音群岛",10001,"Echo Isles",,
+1,"丹莫罗",10000,"Dun Morogh","1-10","1-2"
+3,"荒芜之地",10000,"Badlands","44-48","13-14"
+4,"诅咒之地",10000,"Blasted Lands","52-54","14-15"
+8,"悲伤沼泽",10000,"Swamp of Sorrows","52-54","14-15"
+10,"暮色森林",10000,"Duskwood","20-25","5-7"
+11,"湿地",10000,"Wetlands","20-25","6-7"
+12,"艾尔文森林",10000,"Elwynn Forest","1-10","1-2"
+28,"西瘟疫之地",10000,"Western Plaguelands","35-40","10-11"
+33,"北荆棘谷",10000,"Northern Stranglethorn","25-30","7-9"
+38,"洛克莫丹",10000,"Loch Modan","10-20","3-6"
+40,"西部荒野",10000,"Westfall","10-15","3-4"
+41,"逆风小径",10000,"Deadwind Pass","55-56","17-18"
+44,"赤脊山",10000,"Redridge Mountains","15-20","4-6"
+45,"阿拉希高地",10000,"Arathi Highlands","25-30","7-8"
+46,"燃烧平原",10000,"Burning Steppes","49-52","15-16"
+47,"辛特兰",10000,"The Hinterlands","30-35","11-12"
+51,"灼热峡谷",10000,"Searing Gorge","47-51","13-14"
+85,"提瑞斯法林地",10000,"Tirisfal Glades","1-10","1-2"
+130,"银松森林",10000,"Silverpine Forest","10-20","3-6"
+139,"东瘟疫之地",10000,"Eastern Plaguelands","40-45","12-13"
+267,"希尔斯布莱德丘陵",10000,"Hillsbrad Foothills","20-25","6-7"
+1497,"幽暗城",10000,"Undercity",,1
+1519,"暴风城",10000,"Stormwind City",,1
+1537,"铁炉堡",10000,"Ironforge",,1
+4298,"东瘟疫之地：血色领地",10000,"Plaguelands: The Scarlet Enclave",,
+4706,"吉尔尼斯废墟",10000,"Ruins of Gilneas",,
+4714,"吉尔尼斯",10000,"Gilneas",,
+4755,"吉尔尼斯城",10000,"Gilneas City",,
+4815,"柯尔普萨之森",10000,"Vashj'ir: Kelp'thar Forest",,
+4922,"暮光高地",10000,"Twilight Highlands","84-85","23-24"
+5144,"烁光海床",10000,"Vashj'ir: Shimmering Expanse",,
+5145,"无底海渊",10000,"Vashj'ir: Abyssal Depths",,
+5146,"瓦丝琪尔",10000,"Vashj'ir","80-82",
+5287,"荆棘谷海角",10000,"The Cape of Stranglethorn","30-35","9-10"
+5339,"荆棘谷",10000,"Stranglethorn Vale","25-35",
+5351,"吉尔尼斯城废墟",10000,"Ruins of Gilneas City",,
+6170,"北郡",10000,"Northshire",,
+6176,"寒脊山谷",10000,"Coldridge Valley",,
+6454,"丧钟镇",10000,"Deathknell",,
+6457,"新工匠镇",10000,"New Tinkertown",,
+4100,"净化斯坦索姆",10002,"The Culling of Startholme","77-80",
+1196,"乌特加德之颠",10002,"Utgarde Pinnacle","77-80",
+5396,"托维尔失落之城",10002,"Lost City of The Tol'vir","84-85",
+3456,"纳克萨玛斯",10002,"Naxxramas","80-83",
+2677,"黑翼之巢",10002,"Blackwing Lair",60,
+2717,"熔火之心",10002,"Molten Core",60,
+3428,"安其拉",10002,"Ahn'Qiraj",60,
+5861,"暗月岛",10002,"Darkmoon Island",,

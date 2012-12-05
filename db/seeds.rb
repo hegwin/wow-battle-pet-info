@@ -10,8 +10,8 @@ require 'csv'
 Zone.transaction do
   Zone.delete_all
     
-  CSV.foreach("#{Rails.root}/db/data_src/zones.csv") do |blz_id, title_cn, parent_id, title_en|
-    zone = Zone.new(blz_id: blz_id, title_cn: title_cn, title_en: title_en)
+  CSV.foreach("#{Rails.root}/db/data_src/zones.csv") do |blz_id, title_cn, parent_id, title_en, zone_level, pet_level |
+    zone = Zone.new(blz_id: blz_id, title_cn: title_cn, title_en: title_en, zone_level: zone_level, pet_level: pet_level)
     if parent_id =~ /\d/
       parent_zone = Zone.find_by_blz_id(parent_id)
       zone.parent_id = parent_zone.id
@@ -30,7 +30,6 @@ Category.transaction do
   
   CSV.foreach("#{Rails.root}/db/data_src/categories.csv") do |line|
     if line[0] =~ /\d/
-      #category = Category.find_all_by_blz_id([line[0], line[3], line[4]])
       category = Category.find_by_blz_id(line[0])
       restrain_on = Category.find_by_blz_id(line[3], select: :id)
       decay_with = Category.find_by_blz_id(line[4], select: :id)

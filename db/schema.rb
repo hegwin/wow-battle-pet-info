@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121128072748) do
+ActiveRecord::Schema.define(:version => 20121205051857) do
 
   create_table "acquirings", :force => true do |t|
     t.integer  "pet_id",        :null => false
@@ -124,12 +124,16 @@ ActiveRecord::Schema.define(:version => 20121128072748) do
     t.string   "slug"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "zone_level"
+    t.string   "pet_level"
   end
 
   add_index "zones", ["blz_id"], :name => "index_zones_on_blz_id"
   add_index "zones", ["parent_id"], :name => "index_zones_on_parent_id"
+  add_index "zones", ["pet_level"], :name => "index_zones_on_pet_level"
   add_index "zones", ["slug"], :name => "index_zones_on_slug", :unique => true
   add_index "zones", ["title_cn"], :name => "index_zones_on_title_cn"
   add_index "zones", ["title_en"], :name => "index_zones_on_title_en"
+  add_index "zones", ["zone_level"], :name => "index_zones_on_zone_level"
 
 end

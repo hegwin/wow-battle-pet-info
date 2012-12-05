@@ -17,8 +17,8 @@
       <tr>
         <td><%= image_tag "zones/#{zone.blz_id}.jpg", size: '24x24' %></td>
         <td><%= link_to zone.title_cn, zone_path(zone) %></td>
-        <td>1-90</td>
-        <td>1-25</td>
+        <td><%= zone.zone_level %></td>
+        <td><%= zone.pet_level %></td>
       </tr>  
     <% end %>
   </tbody>
