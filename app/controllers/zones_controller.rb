@@ -23,6 +23,7 @@ class ZonesController < ApplicationController
   def show
     @zone = Zone.find(params[:id])
     @pets = @zone.pets.page(params[:page]).per(20).includes(:category).includes(:acquirings)
+    @local_pets = Pet.exist_only_in(@zone)
 
     respond_to do |format|
       format.html # show.html.erb

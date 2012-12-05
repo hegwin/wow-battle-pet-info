@@ -10,6 +10,15 @@
   <%= @zone.description %>
 </p>
 
+<% if @local_pets.count > 0 %>
+<h2><small>本地特有宠物</small></h2>
+<ul>
+  <% @local_pets.each do |pet|%>
+    <li><%= link_to pet.title_cn, pet_path(pet) %></li>
+  <% end%>
+</ul>
+<% end %>
+
 <h2>Pets</h2>
 
 <%= render partial: 'pets/table' %>
