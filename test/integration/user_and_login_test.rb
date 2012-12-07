@@ -19,18 +19,19 @@ class UserAndLoginTest < ActionDispatch::IntegrationTest
     assert_select 'div.page-header h1', /#{pet.title_cn}/
     assert_select 'div.admin-btn-panel', 0
     
-    get "pets/#{pet.id}/edit"
+    edit_uri = "/pets/#{pet.id}/edit"
+    get edit_uri 
     assert_redirected_to login_url
     
-    post_via_redirect login_url, {name: "ashuram", password: "pswd"}
-    assert_response :success
+    post login_url, {name: "ashuram", password: "pswd"}
+    assert_redirected_to edit_uri
     assert_equal admin.id, session[:user_id]
-    assert_select 'ul.nav li', 11
-    assert_select 'div.admin-btn-panel'
+
     get "pets/#{pet.id}"
     assert_select 'div.admin-btn-panel'
+    assert_select 'ul.nav li', 11
     
-    get "pets/#{pet.id}/edit"
+    get edit_uri
     assert_response :success
 
     put_via_redirect pet_path(pet), id: pet, pet: {title_cn: pet.title_cn, reviewed: "0" }

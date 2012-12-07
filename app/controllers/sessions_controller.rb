@@ -6,7 +6,9 @@ class SessionsController < ApplicationController
     user = User.find_by_name(params[:name])
     if user and user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to pets_url
+      original_url = session[:original_url]
+      session[:original_url] = nil
+      redirect_to original_url || pets_url
     else
       redirect_to login_url, alert: "Invalid user/password combination"
     end

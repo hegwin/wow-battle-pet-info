@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     unless User.find_by_id(session[:user_id])
+      session[:original_url] = request.original_url
       redirect_to login_url
     end
   end
