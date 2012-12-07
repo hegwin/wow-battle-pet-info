@@ -16,6 +16,10 @@ WowPetBattleInfo::Application.routes.draw do
   resources :categories
 
   resources :pets do
+    member do
+      post :acquire
+    end
+
     collection do
       get :search
     end

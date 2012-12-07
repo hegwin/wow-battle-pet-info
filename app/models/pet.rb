@@ -21,4 +21,17 @@ class Pet < ActiveRecord::Base
   def main_skill_category
     categories_of_skills.group('categories.id').order('count(*) desc').first
   end
+
+  def forget_all_skills
+    skills.clear
+  end
+
+  def acquire_skills(skills)
+    skills.each do |skill|
+      if skill[:title_cn].strip.size > 0  
+        new_skill = Skill.find_by_title_cn(skill[:title_cn])
+        acquirings.create(skill: new_skill, acquire_level: skill[:acquire_level]) if new_skill
+      end
+    end
+  end
 end

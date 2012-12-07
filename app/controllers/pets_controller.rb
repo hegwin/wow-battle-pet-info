@@ -38,6 +38,7 @@ class PetsController < ApplicationController
   # GET /pets/1/edit
   def edit
     @pet = Pet.find(params[:id])
+    @acquirings = @pet.acquirings.order(:acquire_level).includes(:skill).order(:acquire_level)
   end
 
   # POST /pets
@@ -70,6 +71,14 @@ class PetsController < ApplicationController
         format.json { render json: @pet.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def acquire
+    @pet = Pet.find(params[:id])
+    @pet.forget_all_skills
+    @pet.acquire_skills(params[:skills])
+
+    redirect_to @pet, notice: "Pet have successfully acquired skills"
   end
 
   # DELETE /pets/1

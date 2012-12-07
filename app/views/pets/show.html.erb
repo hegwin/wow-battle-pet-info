@@ -56,49 +56,6 @@
   </tbody>
 </table>
 
-<h2></h2>
-<p>
-  <b>Blz:</b>
-  <%= @pet.blz_id %>
-  </p>
-
-<p>
-  <b>Status:</b>
-  <%= @pet.status %>
-</p>
-
-
-<p>
-  <b>Source:</b>
-  <%= @pet.source %>
-</p>
-
-<p>
-  <b>Event:</b>
-  <%= @pet.event %>
-</p>
-
-<p>
-  <b>Weather:</b>
-  <%= @pet.weather %>
-</p>
-
-<p>
-  <b>Season:</b>
-  <%= @pet.season %>
-</p>
-
-<p>
-  <b>Nga url:</b>
-  <%= @pet.nga_url %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @pet.category_id %>
-</p>
-
-
 <%= link_to raw('<i class="icon-chevron-left"></i> Back'), pets_path, class: "btn" %>
 <% if session[:user_id] %>
   <div class="admin-btn-panel form-actions">

@@ -1,64 +1,105 @@
-<%= form_for(@pet) do |f| %>
+<%= form_for @pet, html: {class: "form-horizontal"} do |f| %>
   <% if @pet.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
-
+    <fieldset id="error_explanation" class="control-group error">
+      <legend><%= pluralize(@pet.errors.count, "error") %> prohibited this pet from being saved:</legend>
       <ul>
       <% @pet.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
-    </div>
+    </fieldset>
   <% end %>
 
-  <div class="field">
-    <%= f.label :blz_id %><br />
-    <%= f.number_field :blz_id %>
+  <h2><small>基本信息</small></h2>
+
+  <div class="control-group">
+    <%= f.label :blz_id, class: "control-label" %>
+    <div class="controls">
+      <%= f.number_field :blz_id %>
+    </div>  
   </div>
-  <div class="field">
-    <%= f.label :title_cn %><br />
-    <%= f.text_field :title_cn %>
+
+  <div class="control-group">
+    <%= f.label :title_cn, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :title_cn, class: "input-xlarge" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :title_en %><br />
-    <%= f.text_field :title_en %>
+
+  <div class="control-group">
+    <%= f.label :title_en, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :title_en, class: "input-xlarge" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+
+  <div class="control-group">
+    <%= f.label :description, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_area :description, class: "input-xlarge", rows: 3 %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
+    
+  <div class="control-group">
+    <%= f.label :icon_url, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :icon_url, class: "input-xlarge" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :icon_url %><br />
-    <%= f.text_field :icon_url %>
+
+  <div class="control-group">
+    <%= f.label :source, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :source, class: "input-xlarge" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :source %><br />
-    <%= f.text_field :source %>
+
+  <h2><small>特殊事件</small></h2>
+  <div class="control-group">
+    <%= f.label :event, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :event, class: "input-xlarge" %>
+    </div>
+  </div>  
+
+  <div class="control-group">
+    <%= f.label :weather, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :weather, class: "input-xlarge" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :reviewed %><br />
-    <%= f.check_box :reviewed %>
-  <div class="field">
-    <%= f.label :event %><br />
-    <%= f.text_field :event %>
+
+  <div class="control-group">
+    <%= f.label :season, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :season, class: "input-xlarge" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :weather %><br />
-    <%= f.text_field :weather %>
+
+  <h2><small>数据状态</small></h2>
+  <div class="control-group">
+    <%= f.label :status, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :status, class: "input-xlarge" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :season %><br />
-    <%= f.text_field :season %>
+
+  <div class="control-group">
+    <%= f.label :reviewed, class: "control-label" %>
+    <div class="controls">
+      <%= f.check_box :reviewed %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :nga_url %><br />
-    <%= f.text_field :nga_url %>
+
+  <h2><small>参考链接</small></h2>
+  <div class="control-group">
+    <%= f.label :nga_url, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :nga_url, class: "input-xlarge" %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-actions">
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
