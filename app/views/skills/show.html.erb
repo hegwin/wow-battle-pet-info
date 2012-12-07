@@ -1,49 +1,53 @@
+<div class="page-header">
+  <h1>
+    <%= image_tag "skills/#{@skill.blz_id}.jpg", size: "26x26", style: "vertical-align: middle" %>
+    <%= @skill.title_cn %>
+  </h1>
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Blz:</b>
-  <%= @skill.blz_id %>
-</p>
+<div class="container">
+  <div class="span5">
+    <div class="well">
+      <h2><small>技能卡片</small></h2>
+      <div class="row">
+        <span class="span1"><span class="label label-info">名称</span></span>
+        <span class="span3"><%= @skill.title_cn %></span>
+      </div>      
+      <div class="row">
+        <span class="span1"><span class="label label-info">说明</span></span>
+        <span class="span3"><%= @skill.description %></span>
+      </div>
+      <div class="row">
+        <span class="span1"><span class="label label-info">类型</span></span>
+        <span class="span3"><%= link_to @skill.category.title_cn, category_path(@skill.category) %></span>
+      </div>
+      <div class="row">
+        <span class="span1"><span class="label label-info">命中率</span></span>
+        <span class="span3"><%= number_to_percentage @skill.hit_rate, precision: 0 %></span>
+      </div>
+      <div class="row">
+        <span class="span1"><span class="label label-info">冷却</span></span>
+        <span class="span3"><%= @skill.cd %></span>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <b>Title cn:</b>
-  <%= @skill.title_cn %>
-</p>
+  <div class="span3">
+    <div class="well">
+      <p><i class="icon-arrow-up"></i> 对 <%= image_tag @restrained_category.icon_url, size: "18x18"%> 提升 50%</p>
+      <p><i class="icon-arrow-down"></i> 对 <%= image_tag @decayed_category.icon_url, size: "18x18"%> 降低 33%</p>
+    </div>
+  </div>
+</div>
 
-<p>
-  <b>Title en:</b>
-  <%= @skill.title_en %>
-</p>
 
-<p>
-  <b>Description:</b>
-  <%= @skill.description %>
-</p>
+<h2><small>Comments</small></h2>
+<p><%= @skill.comments || "暂无备注" %></p>
 
-<p>
-  <b>Hit rate:</b>
-  <%= @skill.hit_rate %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @skill.category_id %>
-</p>
-
-<p>
-  <b>Cd:</b>
-  <%= @skill.cd %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @skill.status %>
-</p>
-
-<p>
-  <b>Comments:</b>
-  <%= @skill.comments %>
-</p>
+<h2>Pets</h2>
+<%= render 'pets/table' %>
 
 <%= link_to raw('<i class="icon-chevron-left"></i> Back'), skills_path, class: "btn" %>
 <% if session[:user_id] %>

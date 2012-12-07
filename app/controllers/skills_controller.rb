@@ -15,6 +15,10 @@ class SkillsController < ApplicationController
   # GET /skills/1.json
   def show
     @skill = Skill.find(params[:id])
+    @pets = @skill.pets.page(params[:page]).per(20).includes(:category).includes(:acquirings)
+    @category = @skill.category
+    @restrained_category = @category.restrain
+    @decayed_category = @category.decay
 
     respond_to do |format|
       format.html # show.html.erb

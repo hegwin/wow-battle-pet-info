@@ -6,7 +6,7 @@ class UserAndLoginTest < ActionDispatch::IntegrationTest
     get '/pets'
     assert_response :success
     assert_select 'div.admin-btn-panel', 0
-    assert_select 'ul.nav li', 8
+    assert_select 'ul.nav li', 9
     get "pets/#{pet.id}"
     assert_response :success
   end
@@ -25,7 +25,7 @@ class UserAndLoginTest < ActionDispatch::IntegrationTest
     post_via_redirect login_url, {name: "ashuram", password: "pswd"}
     assert_response :success
     assert_equal admin.id, session[:user_id]
-    assert_select 'ul.nav li', 10
+    assert_select 'ul.nav li', 11
     assert_select 'div.admin-btn-panel'
     get "pets/#{pet.id}"
     assert_select 'div.admin-btn-panel'
@@ -41,6 +41,6 @@ class UserAndLoginTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_equal nil, session[:user_id]
     get "/pets"
-    assert_select "ul.nav li", 8
+    assert_select "ul.nav li", 9
   end
 end
