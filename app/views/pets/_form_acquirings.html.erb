@@ -1,13 +1,13 @@
 <%= form_tag acquire_pet_path(@pet), class: "form-horizontal" do %>
 
   <% hashed_acquirings = acquirings_hash(@acquirings) %>
-  <% Skill::ACQUIRING_LEVEL.each do |i| %>
-    <% skill = hashed_acquirings[i].skill if hashed_acquirings[i] %>
-    <div class="control-group" id=i>
-      <%= label_tag i,i, class: "control-label" %>
+  <% Skill::ACQUIRING_LEVEL.each do |level| %>
+    <% skill = hashed_acquirings[level].skill if hashed_acquirings[level] %>
+    <div class="control-group" id = "level-<%= level %>">
+      <%= label_tag level, level, class: "control-label" %>
       <div class="controls">
         <%= text_field_tag 'skills[][skill_id]', skill.nil? ? "" : skill.id, type: 'hidden' %>
-        <%= text_field_tag 'skills[][acquire_level]', i, type: 'hidden' %>
+        <%= text_field_tag 'skills[][acquire_level]', level, type: 'hidden' %>
         <%= text_field_tag 'skills[][title_cn]', skill.nil? ?  "" : skill.title_cn, class: "input-xlarge" %>
         <span class="help-inline"><%= skill.description if skill %></span>
       </div>
@@ -15,7 +15,7 @@
   <% end %>
 
   <div class="form-actions">
-    <%= submit_tag "Submit", class: "btn btn-primary" %>
+    <%= submit_tag "Submit", class: "btn btn-primary", id: "submit_skill" %>
   </div>
 
 <% end %>

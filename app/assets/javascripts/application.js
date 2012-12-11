@@ -13,7 +13,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-//jQuery(document).ready(function() {
-//  $('a.pop').each(function(index, a) a.popover() ) 
-  //$(function() { $('a.pop').popover() )}
-//)

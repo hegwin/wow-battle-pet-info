@@ -31,7 +31,7 @@ gem 'kaminari'
 # To generate friendly url
 gem 'friendly_id',   '~> 4.0.1'
 
-# To hide unuseful warnings
+# Web server
 gem 'thin'
 
 # To use ActiveModel has_secure_password

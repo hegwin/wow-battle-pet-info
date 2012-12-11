@@ -91,4 +91,12 @@ class SkillsController < ApplicationController
 
     render :index
   end
+
+  def verify
+    skill = Skill.find_by_title_cn(params[:title_cn])
+    @result = skill.nil? ? 'error' : 'success'
+    @group_id = params[:level]
+
+    respond_to {|format| format.js }
+  end
 end

@@ -27,4 +27,10 @@ class PetTest < ActiveSupport::TestCase
     pet = pets(:hatchling)
     assert_equal categories(:dragonkin), pet.main_skill_category
   end
+
+  test "should forget all skills" do
+    pet = pets(:hatchling)
+    pet.forget_all_skills
+    assert_equal 0, pet.acquirings.size
+  end
 end

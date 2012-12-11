@@ -10,6 +10,7 @@ WowPetBattleInfo::Application.routes.draw do
   resources :skills do
     collection do
       get :search
+      get :verify
     end
   end
 
