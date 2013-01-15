@@ -20,3 +20,6 @@
 
 # Ingnore KPF file
 *.komodoproject
+
+# Ingore some configuration files
+/config/database.yml
