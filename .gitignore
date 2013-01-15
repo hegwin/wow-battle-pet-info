@@ -14,5 +14,9 @@
 /log/*.log
 /tmp
 
-# Innore all swap files.
+# Ingore all swap files.
 *.swp
+*~
+
+# Ingnore KPF file
+*.komodoproject
