@@ -4,11 +4,23 @@
 $ ->
   $('a[rel="popover"]').popover()
 
+validateSkill = (data, level) ->
+  controls = "div#" + level
+  if data?
+    $(controls).removeClass("error").addClass("success")
+    $("span.help-inline", $(controls)).text(data.description)
+    $("input[name='skills[][skill_id]']", $(controls)).attr("value", data.id)
+  else
+    $(controls).removeClass("success").addClass("error")
+    $("span.help-inline", $(controls)).text("")
+
 $ ->
   $('div#skill input').blur ->
+    level = $(this).parents('.control-group').attr("id") 
     $.ajax
-      url: "/skills/verify"
+      url: "/skills/verify.json"
       data:
         title_cn: this.value
-        level: $(this).parents('.control-group').attr("id")
       type: "GET"
+      dataType: "json"
+      success: (data) -> validateSkill(data, level)

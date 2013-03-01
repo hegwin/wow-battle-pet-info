@@ -93,10 +93,10 @@ class SkillsController < ApplicationController
   end
 
   def verify
-    skill = Skill.find_by_title_cn(params[:title_cn])
-    @result = skill.nil? ? 'error' : 'success'
-    @group_id = params[:level]
+    @skill = Skill.select([:id, :description]).find_by_title_cn(params[:title_cn])
 
-    respond_to {|format| format.js }
+    respond_to do |format| 
+      format.json { render json: @skill.to_json }
+    end
   end
 end
