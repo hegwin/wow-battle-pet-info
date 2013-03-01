@@ -6,4 +6,9 @@ $ ->
 
 $ ->
   $('div#skill input').blur ->
-    jQuery.ajax('/skills/verify?title_cn=' + this.value + '&level=' + $(this).parents('.control-group').attr("id")) 
+    $.ajax
+      url: "/skills/verify"
+      data:
+        title_cn: this.value
+        level: $(this).parents('.control-group').attr("id")
+      type: "GET"

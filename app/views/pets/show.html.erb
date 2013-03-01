@@ -57,9 +57,7 @@
 </table>
 
 <%= link_to raw('<i class="icon-chevron-left"></i> Back'), pets_path, class: "btn" %>
-<% if session[:user_id] %>
-  <div class="admin-btn-panel form-actions">
-    <%= link_to 'Edit', edit_pet_path(@pet), class: 'btn btn-primary' %>
-    <%= button_to 'Destroy', @pet, method: :delete, confirm: 'Are you sure?' , class: 'btn btn-danger' %> 
-  </div>
+<%= div_if session[:user_id], class: "admin-btn-panel form-actions" do %>
+  <%= link_to 'Edit', edit_pet_path(@pet), class: 'btn btn-primary' %>
+  <%= button_to 'Destroy', @pet, method: :delete, confirm: 'Are you sure?' , class: 'btn btn-danger' %> 
 <% end %>
