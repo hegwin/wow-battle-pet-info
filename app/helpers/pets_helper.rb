@@ -24,4 +24,8 @@ module PetsHelper
     acquirings.each {|s| hash[s.acquire_level] = s}
     hash
   end
+
+  def options_of_categories
+    Category.select([:id, :title_cn]).map {|c| [c.title_cn, c.id]}
+  end
 end

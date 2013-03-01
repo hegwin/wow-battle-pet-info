@@ -1,5 +1,4 @@
 <%= form_tag acquire_pet_path(@pet), class: "form-horizontal" do %>
-
   <% hashed_acquirings = acquirings_hash(@acquirings) %>
   <% Skill::ACQUIRING_LEVEL.each do |level| %>
     <% skill = hashed_acquirings[level].skill if hashed_acquirings[level] %>

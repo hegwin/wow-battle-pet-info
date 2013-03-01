@@ -12,11 +12,11 @@ validateSkill = (data, level) ->
     $("input[name='skills[][skill_id]']", $(controls)).attr("value", data.id)
   else
     $(controls).removeClass("success").addClass("error")
-    $("span.help-inline", $(controls)).text("")
+    $("span.help-inline", $(controls)).text("Skill Not Found")
 
 $ ->
   $('div#skill input').blur ->
-    level = $(this).parents('.control-group').attr("id") 
+    level = $(this).parents('.control-group').attr("id")
     $.ajax
       url: "/skills/verify.json"
       data:
