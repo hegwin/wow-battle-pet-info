@@ -29,6 +29,12 @@
   </div>
 </div>
 
+<div><i class="icon-tags"></i> Tags:
+  <% @pet.tags.each do |tag| %>
+    <%= link_to tag.name, pets_path({tag: tag.name}) %>
+  <% end %>
+</div>
+
 <h2>Abilities</h2>
 <table class="table table-striped table-bordered">
   <thead>

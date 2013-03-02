@@ -1,0 +1,25 @@
+<%= form_for @pet, html: {class: "form-horizontal"} do |f| %>
+  <% if @pet.errors.any? %>
+    <fieldset id="error_explanation" class="control-group error">
+      <legend><%= pluralize(@pet.errors.count, "error") %> prohibited this pet from being saved:</legend>
+      <ul>
+      <% @pet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </fieldset>
+  <% end %>
+
+  <h2><small>其他信息</small></h2>
+
+  <div class="control-group">
+    <%= f.label :tags, class: "control-label" %>
+    <div class="controls">
+      <%= f.number_field :tag_list %>
+    </div>  
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
