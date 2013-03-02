@@ -1,5 +1,5 @@
 class Pet < ActiveRecord::Base
-  attr_accessible :blz_id, :category, :category_id, :description, :event, :icon_url, :nga_url, :season, :source, :status, :title_cn, :title_en, :url_param, :weather, :reviewed
+  attr_accessible :blz_id, :category, :category_id, :description, :event, :icon_url, :nga_url, :season, :source, :status, :title_cn, :title_en, :url_param, :weather, :reviewed, :tag_list
 
   validates :blz_id, :title_cn, :source, presence: true
   validates :blz_id, uniqueness: true
@@ -9,6 +9,8 @@ class Pet < ActiveRecord::Base
   belongs_to :category
   has_many :skills, through: :acquirings
   has_many :categories_of_skills, through: :skills, source: :category
+  
+  acts_as_taggable
 
   def self.exist_only_in(zone)
     self.find_by_sql(

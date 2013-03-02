@@ -25,6 +25,8 @@ gem 'jquery-rails'
 # ActiveModel acts as tree
 gem 'acts_as_tree'
 
+gem 'acts-as-taggable-on', '~> 2.3.1'
+
 # To paginage
 gem 'kaminari'
 
