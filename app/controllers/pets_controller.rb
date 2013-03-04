@@ -3,7 +3,7 @@ class PetsController < ApplicationController
   # GET /pets
   # GET /pets.json
   def index
-    @pets = Pet.page(params[:page]).per(20).includes(:category).includes(:acquirings).tagged_with(params[:tag])
+    @pets = Pet.page(params[:page]).per(20).includes(:category).includes(:acquirings)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -94,7 +94,7 @@ class PetsController < ApplicationController
   end
 
   def search
-    @pets = Pet.where('title_cn like ?', "%#{params[:q]}%").page(params[:page]).per(20).includes(:category).includes(:acquirings)
+    @pets = Pet.where('title_cn like ?', "%#{params[:search][:title]}%").page(params[:page]).per(20).includes(:category).includes(:acquirings)
 
     render :index
   end
