@@ -94,7 +94,7 @@ class PetsController < ApplicationController
   end
 
   def search
-    @pets = Pet.where('title_cn like ?', "%#{params[:search][:title]}%").page(params[:page]).per(20).includes(:category).includes(:acquirings)
+    @pets = PetSearch.new(params[:search]).execute.page(params[:page]).per(20)
 
     render :index
   end

@@ -42,7 +42,7 @@ class SearchModel
     @condition_values = @condition_values + [ condition_value ].flatten
   end
 
-  def add_include_condition(table_name, condition_string,condition_value)
+  def add_include_condition(table_name, condition_string, condition_value)
     @includes << table_name
     add_condition(condition_string, condition_value)
   end

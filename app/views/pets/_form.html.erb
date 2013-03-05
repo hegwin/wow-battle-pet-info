@@ -36,7 +36,7 @@
   <div class="control-group">
     <%= f.label :category, class: "control-label" %>
     <div class="controls">
-      <%= f.select :category_id, options_of_categories ,class: "input-xlarge" %>
+      <%= f.select :category_id, options_of_categories, {}, class: "input-xlarge" %>
     </div>
   </div>
   
@@ -57,7 +57,7 @@
   <div class="control-group">
     <%= f.label :source, class: "control-label" %>
     <div class="controls">
-      <%= f.text_field :source, class: "input-xlarge" %>
+      <%= f.select :source, Pet::SOURCES, {} ,class: "input-xlarge" %>
     </div>
   </div>
 
