@@ -13,6 +13,8 @@
 <% if session[:user_id ]%>
   <li class="nav-header">Admin</li>
   <li><%= button_to "Logout", logout_path ,method: :delete, class: 'btn btn-mini' %></li>
+  <li class="nav-header">Version</li>
+  <li>version 1.1.0</li>
 <% end%>
 </ul>
 </div>
