@@ -1,4 +1,6 @@
-<h1>Pet Categories</h1>
+<div class="page-header">
+  <h1>Pet Categories</h1>
+</div>
 
 <table class="table table-striped">
   <tr>
@@ -7,25 +9,15 @@
     <th>Features</th>
     <th>Decay with</th>
     <th>Restrain on</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @categories.each do |category| %>
   <tr>
     <td><%= image_tag category.icon_url, size: "24x24" %></td>
-    <td><%= category.title_cn %></td>
+    <td><%= link_to category.title_cn, category %></td>
     <td><%= category.features %></td>
     <td><%= image_tag category.decay.icon_url, size: "24x24" %></td>
     <td><%= image_tag category.restrain.icon_url, size: "24x24" %></td>
-    <td><%= link_to 'Show', category %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Category', new_category_path %>

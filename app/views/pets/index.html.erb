@@ -7,7 +7,14 @@
   <%= select :search, :category, options_of_categories, {prompt: "物种"} , class: "input-small" %>
   <%= select :search, :source, Pet::SOURCES , {prompt: "来源"}, class: "input-small" %>
   <%= text_field :search, :zone, class: "input-small", placeholder: "地点" %>
-  <%= submit_tag "Search", class: "btn", name: nil %>
+  <%= submit_tag "Search", class: "btn btn-primary", name: nil %>
+  <div class="more_filter" style="display: none">
+    <%= link_to "More Filter", "#", class: "btn" %>
+    <br />
+    <label>此功能未完成</label>
+    <%= select :search, :tradable, { "Yes" => "true", "No" => "false"}, {prompt: "可交易？"}, class: "input-small" %>
+    <%= select :search, :can_battle, { "Yes" => "true", "No" => "false"}, {prompt: "可战斗？"}, class: "input-small" %>
+  </div>
 <% end %>
 
 <%= render partial: 'table' %>
