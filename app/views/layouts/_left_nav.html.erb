@@ -13,8 +13,8 @@
 <% if session[:user_id ]%>
   <li class="nav-header">Admin</li>
   <li><%= button_to "Logout", logout_path ,method: :delete, class: 'btn btn-mini' %></li>
-  <li class="nav-header">Version</li>
-  <li>version 1.1.0</li>
 <% end%>
+  <li class="nav-header">Version</li>
+  <li><%= link_to raw('<i class="icon-random"></i> 1.2.0'), 'https://github.com/hegwin/wow-pet-battle-info' %></li>
 </ul>
 </div>
