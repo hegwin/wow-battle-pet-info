@@ -1,4 +1,4 @@
-source 'http://ruby.taobao.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.12'
 
@@ -38,6 +38,9 @@ gem 'thin'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
+
+# Blizzard battle pet API
+gem 'battle_pet'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
