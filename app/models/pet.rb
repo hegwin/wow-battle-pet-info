@@ -6,7 +6,7 @@ class Pet < ActiveRecord::Base
 
   validates :blz_id, :title_cn, :source, presence: true
   validates :blz_id, uniqueness: true
-  validates :source, inclusion: { in: SOURCES}  
+  validates :source, inclusion: { in: SOURCES }  
 
   has_and_belongs_to_many :zones
   has_many :acquirings
