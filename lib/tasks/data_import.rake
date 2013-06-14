@@ -6,17 +6,8 @@ namespace :data do
       blz_ids = args.id_begin.to_i..args.id_end.to_i
 
       blz_ids.each do |i|
-        tried_times = 1
-        begin
-          bp = BattlePet.new i, :cn
-          p bp
-        rescue
-          retry if tried_times <= 3
-          tried_times += 1
-          sleep 5
-        end
-
-        if bp
+        bp = BattlePet.new i, :cn
+        if bp.name
           unless Pet.find_by_blz_id(bp.id)
             category = Category.find_by_title_en(bp.type)
             params = { blz_id: bp.id, title_cn: bp.name, category_id: category.id, description: bp.description, icon_url: bp.icon_url, tag_list: bp.added_in_patch }
