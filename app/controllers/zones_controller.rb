@@ -1,5 +1,5 @@
 class ZonesController < ApplicationController
-  before_filter :authorize, except: [:index, :show, :sublist]
+  before_action :authorize, except: [:index, :show, :sublist]
   # GET /zones
   # GET /zones.json
   def index
@@ -16,8 +16,8 @@ class ZonesController < ApplicationController
     @zone = Zone.find(params[:id])
     @sub_zones = @zone.children
   end
-  
-  
+
+
   # GET /zones/1
   # GET /zones/1.json
   def show

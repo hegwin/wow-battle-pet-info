@@ -23,3 +23,6 @@
 
 # Ingore some configuration files
 /config/database.yml
+/config/master.key
+
+.DS_Store

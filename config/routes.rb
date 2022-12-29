@@ -1,4 +1,4 @@
-WowPetBattleInfo::Application.routes.draw do
+WowBattlePetInfo::Application.routes.draw do
   controller :sessions do
     get    'login'  => :new
     post   'login'  => :create
@@ -26,7 +26,7 @@ WowPetBattleInfo::Application.routes.draw do
     end
   end
 
-  resources :zones do 
+  resources :zones do
     member do
       get :sublist
     end

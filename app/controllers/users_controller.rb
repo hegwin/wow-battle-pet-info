@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authorize#, except: [:new, :create]
+  before_action :authorize#, except: [:new, :create]
   #before_filter :authorize, only: [:new, :create] if User.count > 0
   # GET /users
   # GET /users.json

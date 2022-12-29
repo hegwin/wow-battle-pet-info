@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_filter :authorize, except: [:index, :show]
+  before_filter :before_action, except: [:index, :show]
   # GET /categories
   # GET /categories.json
   def index

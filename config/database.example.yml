@@ -1,11 +1,28 @@
-development:
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
   adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
   encoding: utf-8
-  host: localhost
-  database: pet_battle_prod
 
-test:
-  adapter: postgresql
-  encoding: utf-8
+development:
+  <<: *default
   host: localhost
-  database: pet_battle_test
+  database: battle_pet_development
+  username: root
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: battle_pet_test
+
+production:
+  <<: *default
+  database: battle_pet_production

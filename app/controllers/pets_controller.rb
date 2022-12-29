@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_filter :authorize, except: [:index, :show, :search]
+  before_action :authorize, except: [:index, :show, :search]
   # GET /pets
   # GET /pets.json
   def index

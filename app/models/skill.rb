@@ -1,5 +1,5 @@
 class Skill < ActiveRecord::Base
-  attr_accessible :blz_id, :category, :category_id, :cd, :comments, :description, :hit_rate, :status, :title_cn, :title_en
+  # attr_accessible :blz_id, :category, :category_id, :cd, :comments, :description, :hit_rate, :status, :title_cn, :title_en
 
   has_many :acquirings
   has_many :pets, through: :acquirings

@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  attr_accessible :blz_id, :comments, :decay, :features, :icon_url, :restrain, :title_cn, :title_en, :decay_id, :restrain_id
+  # attr_accessible :blz_id, :comments, :decay, :features, :icon_url, :restrain, :title_cn, :title_en, :decay_id, :restrain_id
 
   extend FriendlyId
   friendly_id :title_en, use: :slugged

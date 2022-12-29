@@ -1,5 +1,5 @@
 class SkillsController < ApplicationController
-  before_filter :authorize, except: [:index, :show, :search]
+  before_action :authorize, except: [:index, :show, :search]
   # GET /skills
   # GET /skills.json
   def index
@@ -95,7 +95,7 @@ class SkillsController < ApplicationController
   def verify
     @skill = Skill.select([:id, :description]).find_by_title_cn(params[:title_cn])
 
-    respond_to do |format| 
+    respond_to do |format|
       format.json { render json: @skill.to_json }
     end
   end
