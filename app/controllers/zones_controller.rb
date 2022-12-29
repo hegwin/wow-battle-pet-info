@@ -13,7 +13,7 @@ class ZonesController < ApplicationController
 
   # GET /zones/:id/sublist
   def sublist
-    @zone = Zone.find(params[:id])
+    @zone = Zone.friendly.find(params[:id])
     @sub_zones = @zone.children
   end
 
@@ -21,7 +21,7 @@ class ZonesController < ApplicationController
   # GET /zones/1
   # GET /zones/1.json
   def show
-    @zone = Zone.find(params[:id])
+    @zone = Zone.friendly.find(params[:id])
     @pets = @zone.pets.page(params[:page]).per(20).includes(:category).includes(:acquirings)
     @local_pets = Pet.exist_only_in(@zone)
 
@@ -89,5 +89,11 @@ class ZonesController < ApplicationController
       format.html { redirect_to zones_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def zone_params
+    params.require(:zone).permit(:blz_id, :description, :parent_id, :title_cn, :title_en, :zone_level, :pet_level)
   end
 end

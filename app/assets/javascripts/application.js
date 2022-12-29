@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-1.8.3.min
 //= require bootstrap.min
 //= require bootstrap-popover
 //= require bootstrap-tooltip

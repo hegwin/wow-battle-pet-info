@@ -99,4 +99,10 @@ class SkillsController < ApplicationController
       format.json { render json: @skill.to_json }
     end
   end
+
+  private
+
+  def skill_params
+    params.require(:skill).permit(:blz_id, :category, :category_id, :cd, :comments, :description, :hit_rate, :status, :title_cn, :title_en)
+  end
 end

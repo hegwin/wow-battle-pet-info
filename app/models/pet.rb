@@ -2,8 +2,6 @@
 class Pet < ActiveRecord::Base
   SOURCES = %w[专业技能 任务 世界活动 暴雪宠物商店 宠物对战 商人 掉落 成就 促销活动 集换卡牌游戏 未知来源]
 
-  # attr_accessible :blz_id, :category, :category_id, :description, :event, :icon_url, :nga_url, :season, :source, :status, :title_cn, :title_en, :url_param, :weather, :reviewed, :tag_list
-
   validates :blz_id, :title_cn, :source, presence: true
   validates :blz_id, uniqueness: true
   validates :source, inclusion: { in: SOURCES }

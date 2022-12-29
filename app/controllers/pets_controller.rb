@@ -94,8 +94,15 @@ class PetsController < ApplicationController
   end
 
   def search
-    @pets = PetSearch.new(params[:search]).execute.page(params[:page]).per(20)
+    q = Pet.ransack(params[:search])
+    @pets = q.result.includes(:skills, :category).page(params[:page]).per(20)
 
     render :index
+  end
+
+  private
+
+  def pet_params
+    params.require(:pet).permit(:blz_id, :category, :category_id, :description, :event, :icon_url, :nga_url, :season, :source, :status, :title_cn, :title_en, :url_param, :weather, :reviewed, :tag_list)
   end
 end

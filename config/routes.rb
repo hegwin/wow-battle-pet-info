@@ -5,8 +5,6 @@ WowBattlePetInfo::Application.routes.draw do
     delete 'logout' => :destroy
   end
 
-  resources :users
-
   resources :skills do
     collection do
       get :search

@@ -8,13 +8,13 @@
   <li><%= link_to raw('<i class="icon-flag"></i> Zones'), zones_path%></li>
   <li><%= link_to raw('<i class="icon-th-list"></i> Categories'), categories_path %></li>
   <li class="nav-header">Contact me</li>
-  <li><a href="http://mail.163.com/share/mail2me.htm#email=122119116051049053064049054051046099111109" target="_blank"><i class="icon-envelope"></i> Email</a></li>
-  <li><a href="http://hegwin.diandian.com/" target="_blank"><i class="icon-pencil"></i> Blog</a></li>
+  <li><a href="mailto: hegwin@hegwin.me"><i class="icon-envelope"></i> Email</a></li>
+  <li><a href="https://hegwin.me/" target="_blank"><i class="icon-pencil"></i> Blog</a></li>
 <% if session[:user_id ]%>
   <li class="nav-header">Admin</li>
-  <li><%= button_to "Logout", logout_path ,method: :delete, class: 'btn btn-mini' %></li>
+  <li><%= button_to "Logout", logout_path, method: :delete, class: 'btn btn-mini' %></li>
 <% end%>
   <li class="nav-header">Version</li>
-  <li><%= link_to raw('<i class="icon-random"></i> 1.2.0'), 'https://github.com/hegwin/wow-pet-battle-info' %></li>
+  <li><%= link_to raw('<i class="icon-random"></i> 1.2.0'), 'https://github.com/hegwin/blog/releases/tag/v1.2.0' %></li>
 </ul>
 </div>
