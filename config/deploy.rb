@@ -42,7 +42,7 @@ end
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "tmp/webpacker", "public/system", "vendor", "storage"
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'tmp/webpacker', 'public/system', 'storage'
 
-set :bundle_env_variables, { 'GEMS_MIRROR_URL' => 'https://gems.ruby-china.com/' }
+set :bundle_config, { 'mirror.https://rubygems.org' => 'https://gems.ruby-china.com' }
 
 after 'deploy:publishing', 'thin:restart'
 
